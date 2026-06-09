@@ -1,0 +1,468 @@
+/* CSS Variables - QGIS Color Palette & Industrial Theme */
+:root {
+    --qgis-light: #93C038;
+    --qgis-dark: #589632;
+    --qgis-yellow: #FEE028;
+    
+    --bg-darker: #0a0a0a;
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    
+    --text-main: #f8f9fa;
+    --text-muted: #a0a0a0;
+    
+    --font-heading: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+.text-qgis-light { color: var(--qgis-light) !important; }
+.text-qgis-dark { color: var(--qgis-dark) !important; }
+.text-qgis-yellow { color: var(--qgis-yellow) !important; }
+.text-muted-light { color: var(--text-muted) !important; }
+
+.bg-qgis-light { background-color: var(--qgis-light) !important; }
+.bg-qgis-dark { background-color: var(--qgis-dark) !important; }
+.bg-qgis-yellow { background-color: var(--qgis-yellow) !important; }
+.bg-dark { background-color: var(--bg-dark) !important; }
+.section-darker { background-color: var(--bg-darker); }
+
+/* Text Gradient */
+.text-gradient-qgis {
+    background: linear-gradient(90deg, var(--qgis-light), var(--qgis-yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Custom Navigation */
+.custom-nav {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.custom-nav .nav-link {
+    color: var(--text-main);
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.custom-nav .nav-link:hover {
+    color: var(--qgis-light);
+}
+
+/* Buttons */
+.btn-qgis-primary {
+    background-color: var(--qgis-light);
+    color: #000;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    border: 1px solid var(--qgis-light);
+}
+
+.btn-qgis-primary:hover {
+    background-color: transparent;
+    color: var(--qgis-light);
+    box-shadow: 0 0 15px rgba(147, 192, 56, 0.4);
+}
+
+.btn-outline-qgis {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--qgis-light);
+    border-radius: 0;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-qgis:hover {
+    background-color: var(--qgis-light);
+    color: #000;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    padding-top: 80px;
+}
+
+.badge-tech {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgba(254, 224, 40, 0.1);
+    color: var(--qgis-yellow);
+    border-left: 3px solid var(--qgis-yellow);
+    font-size: 0.85rem;
+}
+
+.border-left-qgis {
+    border-left: 4px solid var(--qgis-dark);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Background Abstract Shapes */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.15;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background-color: var(--qgis-light);
+    top: 20%;
+    right: 5%;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background-color: var(--qgis-dark);
+    bottom: 10%;
+    left: -5%;
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+/* Headings */
+.heading-line {
+    height: 3px;
+    width: 60px;
+    background-color: var(--qgis-light);
+    margin-top: 15px;
+}
+
+/* Cards */
+.req-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-top: 3px solid transparent;
+}
+
+.req-card:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--qgis-light);
+    background-color: rgba(30, 30, 30, 0.8);
+}
+
+.icon-wrapper i {
+    font-size: 3rem;
+}
+
+.icon-box-small {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+/* Day Timeline Cards */
+.day-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day-card:hover {
+    transform: translateX(10px);
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid var(--qgis-light);
+}
+
+.day-badge {
+    min-width: 150px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Forms */
+.form-container {
+    position: relative;
+    z-index: 1;
+}
+
+.custom-input {
+    border-radius: 0;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-input:focus {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    color: var(--text-main) !important;
+    border-color: var(--qgis-light);
+    box-shadow: 0 0 0 0.25rem rgba(147, 192, 56, 0.25);
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-fade-in {
+    animation: fadeIn 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.spinner-icon {
+    display: inline-block;
+    animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .day-card:hover {
+        transform: translateY(-10px);
+        border-left: none;
+        border-top: 1px solid var(--qgis-light);
+    }
+    .day-badge {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        min-height: 120px;
+    }
+    .hero-section {
+        text-align: center;
+    }
+    .instructors-box {
+        text-align: left;
+    }
+}
+
+/* Presentation Mode Styles */
+html.presentation-mode {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.presentation-mode body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--bg-darker);
+}
+
+.slide {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 10%;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.slide-title {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: var(--text-main);
+}
+
+.slide-subtitle {
+    font-size: 2.5rem;
+    color: var(--qgis-yellow);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.slide-text {
+    font-size: 2rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.slide-text strong {
+    color: var(--qgis-light);
+}
+
+.slide-list {
+    font-size: 1.8rem;
+    line-height: 1.8;
+}
+
+.slide-list li {
+    margin-bottom: 1rem;
+}
+
+.slide-icon {
+    font-size: 4rem;
+    color: var(--qgis-light);
+    margin-bottom: 1rem;
+}
+
+.presentation-nav {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-nav-slide {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-nav-slide:hover {
+    background-color: var(--qgis-light);
+    color: #000;
+    border-color: var(--qgis-light);
+}
+
+.btn-exit-presentation {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+    .slide-title { font-size: 4rem; }
+    .slide-subtitle { font-size: 2rem; }
+    .slide-text, .slide-list { font-size: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    /* Main Page Responsiveness */
+    .hero-section {
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hero-section .display-3 {
+        font-size: 2.5rem;
+    }
+    .instructors-box {
+        text-align: left;
+    }
+    .day-card:hover {
+        transform: translateY(-10px);
+        border-left: none;
+        border-top: 1px solid var(--qgis-light);
+    }
+    .day-badge {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        min-height: 120px;
+    }
+
+    /* Presentation Responsiveness */
+    .slide {
+        padding: 5rem 5% 2rem 5%;
+        justify-content: flex-start;
+    }
+    .slide-title { 
+        font-size: 2.5rem; 
+        margin-top: 2rem;
+    }
+    .slide-subtitle { font-size: 1.5rem; margin-bottom: 1rem; }
+    .slide-text, .slide-list { font-size: 1.2rem; }
+    .slide-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+    
+    .btn-exit-presentation {
+        top: 1rem;
+        left: 1rem;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    .presentation-nav {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    .btn-nav-slide {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section .display-3 {
+        font-size: 2rem;
+    }
+    .slide-title { font-size: 2rem; }
+    .slide-text, .slide-list { font-size: 1rem; }
+    .req-card { margin-bottom: 1rem; }
+}

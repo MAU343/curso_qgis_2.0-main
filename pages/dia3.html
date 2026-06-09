@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" class="presentation-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Día 3 | Curso QGIS Civil</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+    <a href="../index.html#temario" class="btn btn-outline-qgis btn-exit-presentation font-mono">
+        <i class="bi bi-arrow-left me-2"></i> Volver al Temario
+    </a>
+
+    <!-- Slide 1: Portada Día -->
+    <section class="slide text-center">
+        <div class="bg-shape shape-1" style="top: 10%; right: 10%;"></div>
+        <div class="bg-shape shape-2" style="bottom: 10%; left: 10%;"></div>
+        <div class="grid-overlay"></div>
+        <div class="position-relative z-index-1">
+            <h2 class="slide-subtitle font-mono">Día 3</h2>
+            <h1 class="slide-title">Topografía GNSS y <br><span class="text-gradient-qgis">Automatización de Planimetría</span></h1>
+            <p class="slide-text mt-4">Vincular la captura física de datos en campo con el entorno SIG para automatizar el dibujo topográfico.</p>
+        </div>
+    </section>
+
+    <!-- Slide 2: Captura en Campo -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <i class="bi bi-broadcast-pin slide-icon"></i>
+                <h2 class="slide-subtitle">Captura GNSS en Campo</h2>
+                <p class="slide-text">Práctica guiada con <strong>equipo GNSS</strong> para el levantamiento preciso de puntos de interés.</p>
+                <ul class="list-unstyled slide-list mt-4 font-mono">
+                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Configuración del rover GNSS.</li>
+                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Captura de metadatos espaciales en campo.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Flujo Automatizado -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <i class="bi bi-diagram-3 slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Flujo de Trabajo Automatizado</h2>
+                <p class="slide-text">Procesamiento de libretas de campo (archivos CSV/TXT) dentro del software SIG.</p>
+                <ul class="list-unstyled slide-list mt-4 font-mono">
+                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Importación masiva de puntos.</li>
+                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Generación automatizada de la geometría del plano (líneas y polígonos).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Interoperabilidad CAD -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-filetype-dwg slide-icon"></i>
+                <h2 class="slide-subtitle text-white">Interoperabilidad CAD</h2>
+                <p class="slide-text mt-3">Exportación estructurada de la planimetría generada a formatos vectoriales estándar <strong>(.dxf / .dwg)</strong>.</p>
+                <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Estructuración de capas (layers) listas para CAD.</li>
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Refinamiento en software de diseño tradicional (AutoCAD/Civil 3D).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Controls -->
+    <div class="presentation-nav">
+        <button id="btnPrevSlide" class="btn-nav-slide"><i class="bi bi-chevron-up"></i></button>
+        <button id="btnNextSlide" class="btn-nav-slide"><i class="bi bi-chevron-down"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
