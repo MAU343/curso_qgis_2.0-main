@@ -46,7 +46,7 @@ Día 1: Optimización de Insumos y Precisión Cartográfica
 
 
 * 
-**Pirámides y Overviews:** Técnica para optimizar la visualización de Ortofotos de gran tamaño (avioneta y dron escala 1:100) en computadoras con recursos limitados. 
+**Carga Rápida de Imágenes:** Técnica para optimizar la visualización de Ortofotos de gran tamaño (avioneta y dron escala 1:100) en computadoras con recursos limitados.  
 
 
 * 

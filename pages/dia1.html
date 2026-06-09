@@ -22,53 +22,472 @@
         <div class="grid-overlay"></div>
         <div class="position-relative z-index-1">
             <h2 class="slide-subtitle font-mono">Día 1</h2>
-            <h1 class="slide-title">Optimización de Insumos y <br><span class="text-gradient-qgis">Precisión Cartográfica</span></h1>
-            <p class="slide-text mt-4">Configurar el entorno de trabajo con criterios de precisión de ingeniería.</p>
+            <h1 class="slide-title">Descubriendo los SIG: <br><span class="text-gradient-qgis">El Mundo a través de los Datos</span></h1>
+            <p class="slide-text mt-4">Una introducción visual a la Inteligencia Geoespacial, optimización y precisión.</p>
         </div>
     </section>
 
-    <!-- Slide 2: SRC -->
+    <!-- Slide 2: Mapa Tradicional vs Interfaz -->
     <section class="slide">
         <div class="row align-items-center">
-            <div class="col-lg-8">
-                <i class="bi bi-globe-americas slide-icon"></i>
-                <h2 class="slide-subtitle">Sistemas de Referencia de Coordenadas (SRC)</h2>
-                <p class="slide-text">Configuración e importancia de las <strong>proyecciones locales (UTM)</strong> para el cálculo exacto de distancias y áreas en obras civiles.</p>
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Evolución de la Cartografía</h2>
+                <div class="row text-center mt-4">
+                    <div class="col-md-6 border-end border-dark">
+                        <i class="bi bi-map slide-icon text-muted"></i>
+                        <h3 class="text-white font-mono mt-3">El Mapa Tradicional</h3>
+                        <p class="slide-text text-muted-light mt-3">Estático. Solo visual.<br>El lector debe deducir las relaciones geográficas por su cuenta.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="bi bi-display slide-icon text-qgis-yellow"></i>
+                        <h3 class="text-white font-mono mt-3">El Mapa como Interfaz</h3>
+                        <p class="slide-text text-qgis-light mt-3">Dinámico. Interactivo.<br>Conectado a bases de datos infinitas. Un portal hacia la realidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: ¿Qué es un SIG? -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-diagram-3-fill slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">¿Qué es un SIG?</h2>
+                <p class="slide-text">Un <strong>Sistema de Información Geográfica</strong> nace de una suma poderosa:</p>
+                <div class="row text-center mt-5 align-items-center font-mono text-white fs-4">
+                    <div class="col-md-3">
+                        <i class="bi bi-database text-qgis-light fs-1 d-block mb-3"></i>
+                        Base de Datos <br><span class="text-muted fs-6">(Atributos, tablas)</span>
+                    </div>
+                    <div class="col-md-1 fs-1 text-qgis-yellow">+</div>
+                    <div class="col-md-3">
+                        <i class="bi bi-globe-americas text-qgis-light fs-1 d-block mb-3"></i>
+                        Geografía <br><span class="text-muted fs-6">(Coordenadas, geometría)</span>
+                    </div>
+                    <div class="col-md-1 fs-1 text-qgis-yellow">=</div>
+                    <div class="col-md-4">
+                        <i class="bi bi-pc-display-horizontal text-qgis-light fs-1 d-block mb-3"></i>
+                        SIG <br><span class="text-muted fs-6">(Captura, almacena, analiza)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: 5 Pilares -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Los 5 Pilares del Ecosistema SIG</h2>
+                <div class="row text-center mt-3 g-4">
+                    <div class="col">
+                        <div class="p-3 bg-dark rounded border border-secondary">
+                            <i class="bi bi-hdd-network text-qgis-light fs-2"></i>
+                            <h5 class="text-white mt-3 font-mono">Hardware</h5>
+                            <p class="small text-muted mb-0">Capacidad de procesamiento.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 bg-dark rounded border border-secondary">
+                            <i class="bi bi-code-square text-qgis-yellow fs-2"></i>
+                            <h5 class="text-white mt-3 font-mono">Software</h5>
+                            <p class="small text-muted mb-0">Motor de análisis y dibujo.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 bg-dark rounded border border-secondary">
+                            <i class="bi bi-table text-qgis-light fs-2"></i>
+                            <h5 class="text-white mt-3 font-mono">Datos</h5>
+                            <p class="small text-muted mb-0">La materia prima.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 bg-dark rounded border border-secondary">
+                            <i class="bi bi-people text-qgis-yellow fs-2"></i>
+                            <h5 class="text-white mt-3 font-mono">Humano</h5>
+                            <p class="small text-muted mb-0">Formulan las preguntas.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 bg-dark rounded border border-secondary">
+                            <i class="bi bi-gear-wide-connected text-qgis-light fs-2"></i>
+                            <h5 class="text-white mt-3 font-mono">Procesos</h5>
+                            <p class="small text-muted mb-0">Metodologías y reglas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Capas Temáticas -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-stack slide-icon text-qgis-light"></i>
+                <h2 class="slide-subtitle">El secreto del SIG: Capas Temáticas</h2>
+                <p class="slide-text">El mundo se descompone en capas apiladas que comparten un mismo marco geográfico.</p>
+                <div class="mt-4 p-4 border-left-qgis bg-dark rounded font-mono text-light">
+                    <h5>Un Punto, Múltiples Dimensiones:</h5>
+                    <p class="text-muted-light mb-0 mt-3">
+                        <i class="bi bi-arrow-down-circle text-qgis-yellow me-2"></i>Una simple coordenada (X,Y) atraviesa todas las capas, revelando su altitud, tipo de suelo, y temperatura <strong>simultáneamente.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Anatomía del Dato -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Anatomía del Dato Geográfico</h2>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="p-4 border-left-qgis bg-dark h-100">
+                            <i class="bi bi-crosshair slide-icon text-qgis-yellow"></i>
+                            <h4 class="text-white font-mono mt-2">Posición (Geometría)</h4>
+                            <p class="text-muted-light mt-3">Dónde está exactamente en el mundo real. (Coordenadas, Proyección X,Y,Z).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 border-left-qgis bg-dark h-100">
+                            <i class="bi bi-card-text slide-icon text-qgis-light"></i>
+                            <h4 class="text-white font-mono mt-2">Atributos (Semántica)</h4>
+                            <p class="text-muted-light mt-3">La información detrás de la geometría. (Ej. Nombre, uso, material, velocidad máxima).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 border-left-qgis bg-dark h-100">
+                            <i class="bi bi-node-plus slide-icon text-qgis-yellow"></i>
+                            <h4 class="text-white font-mono mt-2">Topología (Relaciones)</h4>
+                            <p class="text-muted-light mt-3">Cómo interactúa con su entorno ("adyacente a", "dentro de", "conectado a").</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Raster vs Vectorial -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Dos formas de digitalizar el mundo</h2>
+                <div class="row text-center mt-4">
+                    <div class="col-md-6 border-end border-dark">
+                        <i class="bi bi-pentagon-fill slide-icon text-qgis-light"></i>
+                        <h3 class="text-white font-mono mt-3">Vectorial (Geometría Precisa)</h3>
+                        <p class="slide-text text-muted-light mt-3">Basado en matemáticas puras (Puntos, Líneas, Polígonos).<br><br><i class="bi bi-check-circle text-qgis-yellow me-2"></i><strong>Ideal para:</strong> Parcelas, tuberías, calles.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="bi bi-grid-3x3-gap-fill slide-icon text-qgis-yellow"></i>
+                        <h3 class="text-white font-mono mt-3">Raster (Cuadrícula de Píxeles)</h3>
+                        <p class="slide-text text-muted-light mt-3">Cada celda tiene un valor numérico continuo (color, elevación).<br><br><i class="bi bi-check-circle text-qgis-light me-2"></i><strong>Ideal para:</strong> Satélites, modelos de elevación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Capturando la Realidad -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-camera-reels slide-icon"></i>
+                <h2 class="slide-subtitle">Capturando la Realidad</h2>
+                <p class="slide-text">De la tierra a la pantalla (Geodatabase unificada):</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
-                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Exactitud en mediciones.</li>
-                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Prevención de distorsiones en áreas extensas.</li>
+                    <li><i class="bi bi-rocket-takeoff text-qgis-light me-3"></i> <strong>Teledetección:</strong> Satélites y Drones (LiDAR).</li>
+                    <li><i class="bi bi-broadcast-pin text-qgis-yellow me-3"></i> <strong>Trabajo de Campo:</strong> Topografía, Móviles, GPS.</li>
+                    <li><i class="bi bi-scanner text-qgis-light me-3"></i> <strong>Digitalización:</strong> Georreferenciación de planos históricos.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Slide 3: Pirámides y Overviews -->
+    <!-- Slide 9: Análisis Espacial -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle mb-5 text-center">Más que mapas: Análisis Espacial</h2>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <i class="bi bi-search text-qgis-light slide-icon d-block mb-3"></i>
+                        <h4 class="text-white font-mono">Consultas (Queries)</h4>
+                        <p class="text-muted-light">¿Dónde se cumple la condición?<br>(Ej. Encontrar árboles a >1000m de altura).</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="bi bi-record-circle text-qgis-yellow slide-icon d-block mb-3"></i>
+                        <h4 class="text-white font-mono">Proximidad (Buffers)</h4>
+                        <p class="text-muted-light">¿Qué hay cerca?<br>(Ej. Radio de seguridad de 5km de un río).</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="bi bi-intersect text-qgis-light slide-icon d-block mb-3"></i>
+                        <h4 class="text-white font-mono">Superposición (Overlay)</h4>
+                        <p class="text-muted-light">Cruzando variables.<br>(Ej. Intersectar zonas de inundación con áreas residenciales).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Aplicaciones -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-building slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Aplicaciones Prácticas</h2>
+                <p class="slide-text">El SIG en la Ingeniería Civil y Urbanismo permite:</p>
+                <ul class="list-unstyled slide-list mt-4 font-mono">
+                    <li><i class="bi bi-geo-alt-fill text-qgis-light me-3"></i> <strong>Localización Óptima:</strong> Minimizar impacto ambiental al construir (algebra de mapas).</li>
+                    <li><i class="bi bi-bezier text-qgis-light me-3"></i> <strong>Redes y Rutas:</strong> Calcular la vía más rápida (tráfico, topología, restricciones).</li>
+                    <li><i class="bi bi-fire text-qgis-light me-3"></i> <strong>Gestión de Desastres:</strong> Trazar zonas de evacuación frente a incendios o inundaciones usando sensores.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 11: SIG Dinámico -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-activity slide-icon text-danger"></i>
+                <h2 class="slide-subtitle">SIG Dinámico: Paneles en Tiempo Real</h2>
+                <p class="slide-text">La cartografía actual está viva.</p>
+                <div class="mt-4 p-4 border-left-qgis bg-dark rounded font-mono text-light">
+                    <p class="text-muted-light mb-0">
+                        <i class="bi bi-broadcast text-qgis-yellow me-2"></i>Los paneles operacionales (Dashboards) ingieren datos en tiempo real de móviles y sensores, dando una <strong>visión total y al segundo</strong> de la situación.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Ciclo de Vida -->
+    <section class="slide text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle mb-5">Ciclo de Vida de Inteligencia Geoespacial</h2>
+                <div class="d-flex justify-content-between text-white font-mono flex-wrap">
+                    <div class="m-2"><i class="bi bi-camera-reels d-block text-qgis-light mb-2 fs-1"></i>Captura</div>
+                    <div class="m-2 mt-4 text-qgis-yellow"><i class="bi bi-arrow-right fs-2"></i></div>
+                    <div class="m-2"><i class="bi bi-database d-block text-qgis-light mb-2 fs-1"></i>Gestión</div>
+                    <div class="m-2 mt-4 text-qgis-yellow"><i class="bi bi-arrow-right fs-2"></i></div>
+                    <div class="m-2"><i class="bi bi-cpu d-block text-qgis-light mb-2 fs-1"></i>Análisis</div>
+                    <div class="m-2 mt-4 text-qgis-yellow"><i class="bi bi-arrow-right fs-2"></i></div>
+                    <div class="m-2"><i class="bi bi-bar-chart d-block text-qgis-light mb-2 fs-1"></i>Visión</div>
+                    <div class="m-2 mt-4 text-qgis-yellow"><i class="bi bi-arrow-right fs-2"></i></div>
+                    <div class="m-2"><i class="bi bi-lightning-charge-fill d-block text-qgis-light mb-2 fs-1"></i>Decisión</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 13: Conclusión -->
+    <section class="slide text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-globe2 slide-icon" style="font-size: 6rem;"></i>
+                <h1 class="slide-title mt-4">El Futuro es <span class="text-gradient-qgis">Geográfico</span></h1>
+                <p class="slide-text mt-4 mx-auto" style="max-width: 800px;">Para resolver los retos más complejos del mundo actual (cambio climático, distribución de recursos), primero debemos entender <strong>dónde</strong> ocurren.<br><br><span class="text-qgis-yellow">El SIG es la lente que hace visible lo invisible.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVAS DIAPOSITIVAS EPSG -->
+    <!-- Slide EPSG 1: Intro -->
+    <section class="slide text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle font-mono">Transición</h2>
+                <h1 class="slide-title">¿Dónde diablos estoy?</h1>
+                <p class="slide-text mt-4">Entendiendo los Códigos EPSG y Coordenadas <span class="text-qgis-yellow">(Sin dolor)</span>.</p>
+                <i class="bi bi-geo-alt slide-icon mt-4 d-inline-block"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide EPSG 2: La Verdad Incómoda -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">La Verdad Incómoda</h2>
+                <div class="row text-center mt-4">
+                    <div class="col-md-4">
+                        <i class="bi bi-globe-americas slide-icon text-qgis-light"></i>
+                        <h4 class="text-white font-mono mt-3">Tierra 3D</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-arrow-right slide-icon text-muted"></i>
+                        <h4 class="text-muted-light font-mono mt-3">Aplanar</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-display slide-icon text-qgis-yellow"></i>
+                        <h4 class="text-white font-mono mt-3">Pantalla 2D</h4>
+                    </div>
+                </div>
+                <div class="mt-5 p-4 border-left-qgis bg-dark rounded">
+                    <p class="slide-text mb-0 fs-4">La Tierra es redonda. Tu pantalla es plana. Al forzar la realidad 3D en un mapa 2D, algo siempre se rompe, se estira o se <strong class="text-qgis-yellow">deforma (Distorsión)</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide EPSG 3: Proyecciones -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">El arte de "Aplanar" (Proyecciones)</h2>
+                <div class="row text-center mt-4">
+                    <div class="col-md-4">
+                        <i class="bi bi-cylinder slide-icon text-qgis-light"></i>
+                        <h4 class="text-white font-mono mt-3">Cilíndrica</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-cone-striped slide-icon text-qgis-yellow"></i>
+                        <h4 class="text-white font-mono mt-3">Cónica</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-square slide-icon text-qgis-light"></i>
+                        <h4 class="text-white font-mono mt-3">Plana</h4>
+                    </div>
+                </div>
+                <p class="slide-text text-center mt-5 text-muted-light">Los cartógrafos inventaron formas matemáticas para pasar la esfera al papel. Algunas conservan la forma, otras el área y otras la distancia. <strong>¡Nunca todas a la vez!</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide EPSG 4: Conoce al EPSG -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-person-vcard slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Conoce al EPSG (El DNI del Mapa)</h2>
+                <p class="slide-text">Si tú usas una matemática para aplanar (Datum A) y yo uso otra (Datum B), nuestros mapas no coinciden. Necesitábamos un lenguaje común.</p>
+                <div class="mt-4 p-4 border border-secondary bg-dark rounded">
+                    <h3 class="text-white font-mono">EPSG:XXXX</h3>
+                    <p class="text-muted-light mt-2 fs-5">Es un <strong>código único a nivel mundial</strong> que le dice al software exactamente qué modelo matemático (el molde) usar para tu mapa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide EPSG 5: Familia 1 vs Familia 2 -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Las Dos Grandes Familias</h2>
+                <div class="row mt-4">
+                    <div class="col-md-6 border-end border-dark p-4">
+                        <i class="bi bi-globe slide-icon text-qgis-light"></i>
+                        <h3 class="text-white font-mono mt-3">Familia 1: Geográficas</h3>
+                        <ul class="list-unstyled slide-list mt-3 font-mono text-muted-light fs-5">
+                            <li><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Unidad:</strong> Grados, Minutos, Segundos.</li>
+                            <li><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Pregunta:</strong> "¿Dónde estoy?"</li>
+                            <li><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Ejemplo:</strong> EPSG:4326 (WGS84, el del GPS y celulares).</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 p-4">
+                        <i class="bi bi-rulers slide-icon text-qgis-yellow"></i>
+                        <h3 class="text-white font-mono mt-3">Familia 2: Proyectadas (UTM)</h3>
+                        <ul class="list-unstyled slide-list mt-3 font-mono text-muted-light fs-5">
+                            <li><i class="bi bi-arrow-right-short text-qgis-yellow"></i> <strong>Unidad:</strong> Metros (X, Y).</li>
+                            <li><i class="bi bi-arrow-right-short text-qgis-yellow"></i> <strong>Pregunta:</strong> "¿Cuánto mide?"</li>
+                            <li><i class="bi bi-arrow-right-short text-qgis-yellow"></i> <strong>Uso:</strong> Indispensable para calcular áreas y distancias reales en proyectos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide EPSG 6: El Mundo por Zonas -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-map slide-icon text-qgis-light"></i>
+                <h2 class="slide-subtitle">El Mundo por Zonas (UTM)</h2>
+                <p class="slide-text">Para medir en metros sin deformar todo el planeta, dividimos la Tierra en <strong>60 zonas pequeñas</strong>.</p>
+                <div class="mt-4 p-4 border-left-qgis bg-dark rounded">
+                    <p class="text-light mb-0 font-mono fs-4">
+                        <i class="bi bi-info-circle text-qgis-yellow me-2"></i>Como aplastar solo un gajo de la naranja a la vez. Cada zona es plana y tiene su propio código EPSG.
+                    </p>
+                </div>
+                <p class="slide-text mt-4 text-muted-light fs-5"><strong>Ejemplo:</strong> Bogotá usa EPSG:3116. Veracruz usa EPSG:32614. No existe un solo código para medir en metros; debes elegir el que corresponda a tu zona o se distorsionará todo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide EPSG 7: Cheat Sheet -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto">
+                <div class="p-5 rounded" style="background-color: rgba(254, 224, 40, 0.9); color: #000; transform: rotate(-1deg); box-shadow: 5px 10px 15px rgba(0,0,0,0.5);">
+                    <div class="text-center mb-4"><i class="bi bi-pin-angle-fill" style="font-size: 3rem; color: #333;"></i></div>
+                    <h2 class="font-mono fw-black text-center mb-4" style="color: #000;">La Hoja de Trucos (Cheat Sheet)</h2>
+                    <ul class="list-unstyled fs-4 font-mono fw-bold">
+                        <li class="mb-3"><span class="badge bg-dark text-white fs-4 me-2">4326</span> GPS / Mundial (Grados)</li>
+                        <li class="mb-4"><span class="badge bg-dark text-white fs-4 me-2">3857</span> Google Maps / Web (Metros distorsionados)</li>
+                        <hr class="border-dark opacity-50">
+                        <li class="mb-3 mt-4"><span class="badge bg-success fs-4 me-2">326 +</span> Número de Zona (UTM Norte) <br><small class="text-muted ms-5">Ej. Zona 14 = 32614</small></li>
+                        <li class="mb-3"><span class="badge bg-success fs-4 me-2">327 +</span> Número de Zona (UTM Sur) <br><small class="text-muted ms-5">Ej. Zona 18 = 32718</small></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide EPSG 8: Cierre Motivacional -->
+    <section class="slide text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-key slide-icon text-qgis-yellow" style="font-size: 6rem;"></i>
+                <h1 class="slide-title mt-4">Que nada te detenga</h1>
+                <p class="slide-text mt-4 mx-auto" style="max-width: 800px;">El código EPSG es solo la llave para que tus mapas hablen el mismo idioma. Ahora que tienes la llave, el mundo es tuyo.<br><br><span class="text-qgis-light font-mono fs-4">"Yo llegué sin saber usar una computadora, tú también puedes."</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 15: Carga Rápida de Imágenes -->
     <section class="slide">
         <div class="row align-items-center">
             <div class="col-lg-8">
                 <i class="bi bi-layers slide-icon"></i>
-                <h2 class="slide-subtitle">Pirámides y Overviews</h2>
-                <p class="slide-text">Técnica fundamental para <strong>optimizar la visualización de Ortofotos</strong> de gran tamaño (avioneta y dron escala 1:100).</p>
+                <h2 class="slide-subtitle">Carga Rápida de Imágenes Pesadas</h2>
+                <p class="slide-text">Técnica (creación de vistas previas) para <strong>optimizar la visualización de Ortofotos</strong> de gran tamaño (avioneta y dron escala 1:100).</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
                     <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Indispensable en computadoras con recursos limitados.</li>
-                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Acelera el renderizado del lienzo (canvas).</li>
+                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Acelera drásticamente el renderizado del lienzo (canvas) en QGIS.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Slide 4: Ejercicio Práctico -->
+    <!-- Slide 16: Ejercicio Práctico -->
     <section class="slide">
         <div class="row align-items-center">
             <div class="col-lg-10">
-                <i class="bi bi-pc-display slide-icon text-qgis-yellow"></i>
+                <i class="bi bi-pc-display slide-icon text-qgis-light"></i>
                 <h2 class="slide-subtitle text-white">Ejercicio Práctico</h2>
                 <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> <strong>Paso 1:</strong> Definición del SRC del proyecto.</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> <strong>Paso 2:</strong> Carga analítica de ortofotos.</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> <strong>Paso 3:</strong> Recortes por máscaras de área de estudio (Herramienta Clip).</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> <strong>Paso 4:</strong> Creación de catálogos de imágenes ráster (VRT).</li>
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-yellow me-3"></i> <strong>Paso 1:</strong> Definición del SRC del proyecto (UTM Zona Correspondiente).</li>
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-yellow me-3"></i> <strong>Paso 2:</strong> Carga analítica de ortofotos y modelos de elevación.</li>
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-yellow me-3"></i> <strong>Paso 3:</strong> Recortes por máscaras de área de estudio (Herramienta Clip).</li>
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-yellow me-3"></i> <strong>Paso 4:</strong> Creación de catálogos de imágenes ráster virtuales (VRT).</li>
                 </ul>
+                
+                <!-- Sección de Descarga de Insumos (Frontend) -->
+                <div class="mt-5 p-4 border border-secondary bg-darker rounded d-flex align-items-center justify-content-between flex-wrap" style="border-left: 4px solid var(--qgis-light) !important;">
+                    <div>
+                        <h4 class="text-white font-mono mb-1"><i class="bi bi-file-earmark-zip-fill text-qgis-yellow me-2"></i>Material de Práctica</h4>
+                        <p class="text-muted-light mb-0 font-mono small">Contiene: Ortofoto Alta Resolución (.tif) y MDE (.tif)</p>
+                    </div>
+                    <a href="#" class="btn btn-qgis-primary btn-lg font-mono fw-bold mt-3 mt-md-0" onclick="alert('Descarga simulada. En espera de los cortes de datos reales.'); return false;">
+                        <i class="bi bi-cloud-arrow-down-fill me-2"></i> Descargar Datos
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -79,6 +498,6 @@
         <button id="btnNextSlide" class="btn-nav-slide"><i class="bi bi-chevron-down"></i></button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>

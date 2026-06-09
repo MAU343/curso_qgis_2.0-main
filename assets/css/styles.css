@@ -310,13 +310,13 @@ html.presentation-mode {
 }
 
 .slide {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5rem 10%;
+    padding: 3rem 10%;
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -331,9 +331,9 @@ html.presentation-mode {
 }
 
 .slide-subtitle {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--qgis-yellow);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 700;
 }
 
@@ -348,12 +348,12 @@ html.presentation-mode {
 }
 
 .slide-list {
-    font-size: 1.8rem;
-    line-height: 1.8;
+    font-size: 1.5rem;
+    line-height: 1.5;
 }
 
 .slide-list li {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .slide-icon {
