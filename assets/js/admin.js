@@ -1,4 +1,5 @@
 const API_BASE_URL = 'https://sigetux.tuxtla.gob.mx/api';
+// const API_BASE_URL = 'http://127.0.0.1:8000/api';
 let token = localStorage.getItem('admin_token');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,11 +44,11 @@ async function mostrarDashboard() {
 }
 
 async function cargarRegistros() {
-    const tbody = document.getElementById('registrosBody');
+    const container = document.getElementById('asistenciaContainer');
     const countInfo = document.getElementById('countInfo');
     const emptyState = document.getElementById('emptyState');
 
-    tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted">Cargando registros...</td></tr>';
+    container.innerHTML = '<p class="text-muted font-mono small text-center">Cargando asistencias...</p>';
     emptyState.classList.add('d-none');
 
     try {
@@ -65,27 +66,73 @@ async function cargarRegistros() {
         const data = await res.json();
 
         if (data.length === 0) {
-            tbody.innerHTML = '';
+            container.innerHTML = '';
             emptyState.classList.remove('d-none');
-            countInfo.textContent = '0 registros encontrados';
+            countInfo.textContent = '0 asistencias registradas';
             return;
         }
 
-        countInfo.textContent = `${data.length} registro(s) encontrado(s)`;
+        // Group records by date
+        const grouped = {};
+        data.forEach(r => {
+            const dateStr = new Date(r.created_at).toLocaleDateString('es-MX', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            const dateKey = new Date(r.created_at).toISOString().slice(0, 10);
+            if (!grouped[dateKey]) {
+                grouped[dateKey] = { label: dateStr, records: [] };
+            }
+            grouped[dateKey].records.push(r);
+        });
 
-        tbody.innerHTML = data.map((r, i) => `
-            <tr>
-                <td>${i + 1}</td>
-                <td class="text-qgis-light fw-bold">${r.nombre}</td>
-                <td>${r.email}</td>
-                <td>${r.telefono}</td>
-                <td>${r.profesion}</td>
-                <td class="text-muted">${new Date(r.created_at).toLocaleString('es-MX')}</td>
-            </tr>
-        `).join('');
+        // Sort dates descending
+        const sortedDates = Object.keys(grouped).sort().reverse();
+
+        countInfo.textContent = `${data.length} asistencias registradas en ${sortedDates.length} fecha(s)`;
+
+        // Render tables
+        container.innerHTML = sortedDates.map(dateKey => {
+            const group = grouped[dateKey];
+            const rows = group.records.map((r, i) => `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td class="text-qgis-light fw-bold">${r.nombre}</td>
+                    <td>${r.email}</td>
+                    <td>${r.telefono || '-'}</td>
+                    <td>${r.profesion}</td>
+                    <td class="text-muted">${new Date(r.created_at).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}</td>
+                </tr>
+            `).join('');
+
+            return `
+                <div class="mb-5">
+                    <h4 class="fw-bold mb-3 text-qgis-light">
+                        <i class="bi bi-calendar-event me-2"></i>${group.label}
+                        <span class="badge bg-qgis-dark font-mono ms-2">${group.records.length}</span>
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-striped table-bordered border-secondary font-mono small mb-0">
+                            <thead class="text-qgis-yellow text-uppercase" style="background-color:#1e1e1e;">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Telefono</th>
+                                    <th>Profesion</th>
+                                    <th>Hora</th>
+                                </tr>
+                            </thead>
+                            <tbody>${rows}</tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }).join('');
 
     } catch (err) {
-        tbody.innerHTML = `<tr><td colspan="6" class="text-center text-danger">Error al cargar: ${err.message}</td></tr>`;
+        container.innerHTML = `<p class="text-center text-danger font-mono small">Error al cargar: ${err.message}</p>`;
     }
 }
 
@@ -97,21 +144,22 @@ async function exportarCSV() {
         if (!res.ok) throw new Error('Error');
         const data = await res.json();
 
-        const headers = ['ID', 'Nombre', 'Email', 'Telefono', 'Profesion', 'Fecha'];
+        const headers = ['ID', 'Nombre', 'Email', 'Telefono', 'Profesion', 'Fecha', 'Hora'];
         const rows = data.map(r => [
             r.id,
             `"${r.nombre}"`,
             `"${r.email}"`,
             `"${r.telefono}"`,
             `"${r.profesion}"`,
-            new Date(r.created_at).toISOString()
+            new Date(r.created_at).toLocaleDateString('es-MX'),
+            new Date(r.created_at).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
         ]);
 
         const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
         const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
-        link.download = `registros_qgis_${new Date().toISOString().slice(0,10)}.csv`;
+        link.download = `asistencia_qgis_${new Date().toISOString().slice(0,10)}.csv`;
         link.click();
     } catch (err) {
         alert('Error al exportar CSV');

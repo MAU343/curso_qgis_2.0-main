@@ -64,7 +64,7 @@
                 <div>
                     <h2 class="fw-bold mb-1">
                         <i class="bi bi-clipboard-data me-2 text-qgis-light"></i>
-                        Registros del <span class="text-qgis-yellow">Curso</span>
+                        Asistencia por <span class="text-qgis-yellow">Fecha</span>
                     </h2>
                     <p class="text-muted-light font-mono small mb-0" id="countInfo">Cargando...</p>
                 </div>
@@ -85,31 +85,13 @@
                 </button>
             </div>
 
-            <!-- Table -->
-            <div class="table-responsive">
-                <table class="table table-dark table-striped table-bordered border-secondary font-mono small mb-0">
-                    <thead class="text-qgis-yellow text-uppercase" style="background-color:#1e1e1e;">
-                        <tr>
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <th>Email</th>
-                            <th>Telefono</th>
-                            <th>Profesion</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody id="registrosBody">
-                        <tr>
-                            <td colspan="6" class="text-center text-muted">Cargando registros...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <!-- Attendance by date container -->
+            <div id="asistenciaContainer"></div>
 
             <!-- Empty state -->
             <div id="emptyState" class="d-none text-center py-5">
                 <i class="bi bi-inbox fs-1 text-muted"></i>
-                <p class="text-muted font-mono mt-2">No hay registros todavia.</p>
+                <p class="text-muted font-mono mt-2">No hay registros de asistencia todavia.</p>
             </div>
         </section>
     </main>

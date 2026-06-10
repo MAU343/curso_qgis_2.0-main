@@ -1,6 +1,8 @@
 // script.js
 
 const API_BASE_URL = 'https://sigetux.tuxtla.gob.mx/api';
+// const API_BASE_URL = 'http://127.0.0.1:8000/api';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Scroll Reveal Animation
@@ -46,22 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Form Submission to Backend
-    const form = document.getElementById('registrationForm');
-    const formStatus = document.getElementById('formStatus');
+    // 3. Attendance Form Submission
+    const asistenciaForm = document.getElementById('asistenciaForm');
+    const asistenciaStatus = document.getElementById('asistenciaStatus');
 
-    if (form) {
-        form.addEventListener('submit', async (e) => {
+    if (asistenciaForm) {
+        asistenciaForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const formData = {
-                nombre: document.getElementById('nombre').value,
-                email: document.getElementById('email').value,
-                telefono: document.getElementById('telefono').value,
-                profesion: document.getElementById('profesion').value
+                nombre: document.getElementById('nombreAsistencia').value,
+                email: document.getElementById('emailAsistencia').value,
+                telefono: document.getElementById('telefonoAsistencia').value,
+                profesion: document.getElementById('profesionAsistencia').value
             };
 
-            const submitBtn = form.querySelector('button[type="submit"]');
+            const submitBtn = asistenciaForm.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i> ENVIANDO...';
 
@@ -77,18 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error(err.detail || 'Error al enviar');
                 }
 
-                formStatus.className = 'alert alert-success rounded-0 border-0 font-mono small animate-fade-in';
-                formStatus.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> Datos recibidos correctamente. Nos pondremos en contacto.';
-                form.reset();
-            } catch (error) {
-                formStatus.className = 'alert alert-danger rounded-0 border-0 font-mono small animate-fade-in';
-                formStatus.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i> Error al enviar. Intenta de nuevo.';
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="bi bi-send me-2"></i> ENVIAR SOLICITUD';
+                asistenciaStatus.className = 'alert alert-success rounded-0 border-0 font-mono small animate-fade-in';
+                asistenciaStatus.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> Asistencia registrada correctamente.';
 
                 setTimeout(() => {
-                    formStatus.classList.add('d-none');
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('asistenciaModal'));
+                    if (modal) modal.hide();
+                    asistenciaStatus.classList.add('d-none');
+                    asistenciaForm.reset();
+                }, 1500);
+            } catch (error) {
+                asistenciaStatus.className = 'alert alert-danger rounded-0 border-0 font-mono small animate-fade-in';
+                asistenciaStatus.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i> Error al registrar. Intenta de nuevo.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i> REGISTRAR ASISTENCIA';
+
+                setTimeout(() => {
+                    asistenciaStatus.classList.add('d-none');
                 }, 5000);
             }
         });
