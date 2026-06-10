@@ -154,6 +154,7 @@
                                 <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Ejercicio Práctico:</strong> Definición de SRC, recortes (Clip) y catálogos de imágenes ráster.</li>
                             </ul>
                             <div class="mt-4 text-end">
+                                <button class="btn btn-qgis-primary btn-sm font-mono me-2" data-bs-toggle="modal" data-bs-target="#asistenciaModal" onclick="document.getElementById('diaAsistencia').value='Día 1'"><i class="bi bi-clipboard-check me-2"></i>Asistencia</button>
                                 <a href="pages/dia1.html" class="btn btn-outline-qgis btn-sm font-mono"><i class="bi bi-easel2-fill me-2"></i>Presentar Día 1</a>
                             </div>
                         </div>
@@ -176,6 +177,7 @@
                                 <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Ejercicio Práctico:</strong> Zonas de restricción y trazado preliminar de ruta vial.</li>
                             </ul>
                             <div class="mt-4 text-end">
+                                <button class="btn btn-qgis-primary btn-sm font-mono me-2" data-bs-toggle="modal" data-bs-target="#asistenciaModal" onclick="document.getElementById('diaAsistencia').value='Día 2'"><i class="bi bi-clipboard-check me-2"></i>Asistencia</button>
                                 <a href="pages/dia2.html" class="btn btn-outline-qgis btn-sm font-mono"><i class="bi bi-easel2-fill me-2"></i>Presentar Día 2</a>
                             </div>
                         </div>
@@ -198,6 +200,7 @@
                                 <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Interoperabilidad CAD:</strong> Exportación a .dxf / .dwg.</li>
                             </ul>
                             <div class="mt-4 text-end">
+                                <button class="btn btn-qgis-primary btn-sm font-mono me-2" data-bs-toggle="modal" data-bs-target="#asistenciaModal" onclick="document.getElementById('diaAsistencia').value='Día 3'"><i class="bi bi-clipboard-check me-2"></i>Asistencia</button>
                                 <a href="pages/dia3.html" class="btn btn-outline-qgis btn-sm font-mono"><i class="bi bi-easel2-fill me-2"></i>Presentar Día 3</a>
                             </div>
                         </div>
@@ -220,6 +223,7 @@
                                 <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Ejercicio Práctico:</strong> Generación PDF de alta resolución con grilla, escala, norte y tabla volumétrica.</li>
                             </ul>
                             <div class="mt-4 text-end">
+                                <button class="btn btn-qgis-primary btn-sm font-mono me-2" data-bs-toggle="modal" data-bs-target="#asistenciaModal" onclick="document.getElementById('diaAsistencia').value='Día 4'"><i class="bi bi-clipboard-check me-2"></i>Asistencia</button>
                                 <a href="pages/dia4.html" class="btn btn-outline-qgis btn-sm font-mono"><i class="bi bi-easel2-fill me-2"></i>Presentar Día 4</a>
                             </div>
                         </div>
@@ -242,6 +246,7 @@
                                 <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Ejercicio Práctico:</strong> Inspección de derecho de vía en Potree y extracción de coordenadas hacia QGIS.</li>
                             </ul>
                             <div class="mt-4 text-end">
+                                <button class="btn btn-qgis-primary btn-sm font-mono me-2" data-bs-toggle="modal" data-bs-target="#asistenciaModal" onclick="document.getElementById('diaAsistencia').value='Día 5'"><i class="bi bi-clipboard-check me-2"></i>Asistencia</button>
                                 <a href="pages/dia5.html" class="btn btn-outline-qgis btn-sm font-mono"><i class="bi bi-easel2-fill me-2"></i>Presentar Día 5</a>
                             </div>
                         </div>
@@ -310,6 +315,45 @@
         <!-- Decorative grid in background -->
         <div class="grid-overlay" style="opacity: 0.05;"></div>
     </section>
+
+    <!-- Modal de Asistencia -->
+    <div class="modal fade" id="asistenciaModal" tabindex="-1" aria-labelledby="asistenciaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-secondary rounded-0">
+                <div class="modal-header border-dark">
+                    <h5 class="modal-title font-mono text-qgis-light" id="asistenciaModalLabel"><i class="bi bi-clipboard-check-fill me-2"></i>Registro de Asistencia</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted-light font-mono small mb-4">Por favor, registra tu asistencia diaria para validar tu participación en el curso.</p>
+                    <form id="asistenciaForm" onsubmit="event.preventDefault(); document.getElementById('asistenciaStatus').classList.remove('d-none'); setTimeout(()=> { bootstrap.Modal.getInstance(document.getElementById('asistenciaModal')).hide(); document.getElementById('asistenciaStatus').classList.add('d-none'); this.reset(); }, 2000);">
+                        <div class="mb-3">
+                            <label for="diaAsistencia" class="form-label font-mono small text-qgis-yellow">Día de Curso</label>
+                            <input type="text" class="form-control bg-transparent border-secondary text-light custom-input" id="diaAsistencia" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombreAsistencia" class="form-label font-mono small text-qgis-yellow">Nombre Completo</label>
+                            <input type="text" class="form-control bg-transparent border-secondary text-light custom-input" id="nombreAsistencia" required placeholder="Ej. Juan Pérez">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailAsistencia" class="form-label font-mono small text-qgis-yellow">Correo Electrónico</label>
+                            <input type="email" class="form-control bg-transparent border-secondary text-light custom-input" id="emailAsistencia" required placeholder="correo@ejemplo.com">
+                        </div>
+                        <div class="mb-4">
+                            <label for="profesionAsistencia" class="form-label font-mono small text-qgis-yellow">Profesión / Puesto</label>
+                            <input type="text" class="form-control bg-transparent border-secondary text-light custom-input" id="profesionAsistencia" required placeholder="Ingeniero Civil">
+                        </div>
+                        <button type="submit" class="btn btn-qgis-primary w-100 font-mono fw-bold rounded-0 btn-lg">
+                            <i class="bi bi-check-circle me-2"></i> REGISTRAR ASISTENCIA
+                        </button>
+                        <div id="asistenciaStatus" class="alert alert-success d-none rounded-0 border-0 font-mono small mt-3 mb-0">
+                            <i class="bi bi-check-circle-fill me-2"></i> Asistencia guardada correctamente.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-black py-4 border-top border-dark text-center">
