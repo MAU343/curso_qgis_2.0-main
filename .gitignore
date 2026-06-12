@@ -1,0 +1,4 @@
+# Ignore large datasets and spatial files
+*.zip
+*.tif
+*.aux.xml
