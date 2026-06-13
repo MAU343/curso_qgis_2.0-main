@@ -80,7 +80,8 @@ async function cargarRegistros() {
                 month: 'long',
                 day: 'numeric'
             });
-            const dateKey = new Date(r.created_at).toISOString().slice(0, 10);
+            const d = new Date(r.created_at);
+            const dateKey = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
             if (!grouped[dateKey]) {
                 grouped[dateKey] = { label: dateStr, records: [] };
             }
