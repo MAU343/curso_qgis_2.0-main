@@ -164,12 +164,15 @@
                             <span class="display-4 fw-black">2</span>
                         </div>
                         <div class="day-content p-4 flex-grow-1">
-                            <h3 class="fw-bold text-qgis-light mb-3">Modelado del Relieve y Análisis de Superficies</h3>
-                            <p class="text-muted-light"><i class="bi bi-bullseye me-2 text-qgis-yellow"></i><strong>Objetivo:</strong> Explotar los Modelos Digitales de Elevación (MDE) para evaluar la viabilidad física del terreno.</p>
+                            <h3 class="fw-bold text-qgis-light mb-3">Caracterización Topográfica de un Predio</h3>
+                            <p class="text-muted-light"><i class="bi bi-bullseye me-2 text-qgis-yellow"></i><strong>Objetivo:</strong> Delimitar un terreno a partir de una ortofoto, extraer únicamente la información topográfica del polígono y calcular sus dimensiones.</p>
                             <ul class="list-group list-group-flush bg-transparent font-mono small mt-3">
-                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Análisis Topográfico:</strong> Curvas de nivel de MDE LiDAR (1:100), suavizado y etiquetado condicional.</li>
-                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Pendientes y Sombreado:</strong> Modelos Hillshade y mapas de pendientes para vialidades.</li>
-                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Ejercicio Práctico:</strong> Zonas de restricción y trazado preliminar de ruta vial.</li>
+                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Paso 1: Vectorización Manual:</strong> Creación de geometrías poligonales desde cero (Shapefiles/GeoPackage).</li>
+                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Paso 2: Recorte por Máscara:</strong> Extracción de mini-MDE para enfocar recursos solo en el área de interés.</li>
+                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Paso 3: Relieve Local:</strong> Generación instantánea de curvas de nivel y sombreado (Hillshade).</li>
+                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Paso 4: Cálculos Geométricos:</strong> Automatización de áreas y perímetros con la Calculadora de Campos.</li>
+                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Paso 5: Estilización:</strong> Diseño visual y etiquetado avanzado de curvas con halos.</li>
+                                <li class="list-group-item bg-transparent text-light border-dark"><i class="bi bi-arrow-right-short text-qgis-light"></i> <strong>Paso 6: Maquetación Rápida:</strong> Montaje de un plano final con norte, escala gráfica y tabla de resultados.</li>
                             </ul>
                             <div class="mt-4 text-end">
                                 <button class="btn btn-qgis-primary btn-sm font-mono me-2" data-bs-toggle="modal" data-bs-target="#asistenciaModal" onclick="document.getElementById('diaAsistencia').value='Día 2'"><i class="bi bi-clipboard-check me-2"></i>Asistencia</button>
