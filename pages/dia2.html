@@ -280,6 +280,58 @@
         </div>
     </section>
 
+    <!-- Slide 3.1: Cálculo Avanzado de Rumbos -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-compass slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Cálculo Avanzado de Rumbos</h2>
+                <div class="mt-4 p-4 border-left-qgis bg-darker rounded font-mono">
+                    <h5 class="text-white mb-2"><i class="bi bi-exclamation-triangle-fill text-qgis-yellow me-2"></i>Consideración previa importante</h5>
+                    <p class="text-muted-light small mb-0">Esta expresión calcula el rumbo de una línea recta trazada desde el inicio hasta el fin de una geometría. Si tu capa es de polígonos, primero debes convertirla a segmentos individuales usando las herramientas de proceso de QGIS:</p>
+                    <ul class="text-qgis-light small mt-2">
+                        <li><strong>Menú Vectorial > Herramientas de geometría > Polígonos a líneas.</strong></li>
+                        <li><strong>Caja de herramientas de procesos > Explotar líneas</strong> (esto rompe el perímetro en segmentos individuales para que cada línea tenga su propio rumbo).</li>
+                    </ul>
+                </div>
+
+                <h5 class="text-white font-mono mt-4">Expresión para la Calculadora de Campos</h5>
+                <p class="text-muted-light font-mono small mb-2">Crea un nuevo campo de tipo <strong>Texto (Cadena)</strong> con una longitud de al menos 20 caracteres y pega el siguiente código:</p>
+                <div class="code-container bg-dark border border-secondary rounded p-3 position-relative overflow-auto" style="max-height: 250px;">
+                    <pre><code class="text-qgis-yellow font-mono small">with_variable('az', degrees(azimuth(start_point($geometry), end_point($geometry))),
+  with_variable('quadrant',
+    CASE
+      WHEN @az >= 0 AND @az <= 90 THEN 1
+      WHEN @az > 90 AND @az <= 180 THEN 2
+      WHEN @az > 180 AND @az <= 270 THEN 3
+      WHEN @az > 270 AND @az <= 360 THEN 4
+    END,
+    with_variable('r_deg',
+      CASE
+        WHEN @quadrant = 1 THEN @az
+        WHEN @quadrant = 2 THEN 180 - @az
+        WHEN @quadrant = 3 THEN @az - 180
+        WHEN @quadrant = 4 THEN 360 - @az
+      END,
+      with_variable('d', floor(@r_deg),
+        with_variable('m', floor((@r_deg - @d) * 60),
+          with_variable('s', round((((@r_deg - @d) * 60) - @m) * 60, 0),
+            CASE WHEN @quadrant IN (1, 4) THEN 'N ' ELSE 'S ' END ||
+            lpad(@d, 2, '0') || '-' ||
+            lpad(@m, 2, '0') || '-' ||
+            lpad(@s, 2, '0') ||
+            CASE WHEN @quadrant IN (1, 2) THEN ' E' ELSE ' W' END
+          )
+        )
+      )
+    )
+  )
+)</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Slide 4: Ejercicio Práctico -->
     <section class="slide">
         <div class="row align-items-center">
