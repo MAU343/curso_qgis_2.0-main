@@ -332,6 +332,48 @@
         </div>
     </section>
 
+    <!-- Slide 3.2: Explicación del Código -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-code-slash slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">¿Qué hace este código?</h2>
+                
+                <div class="row mt-4 g-3 font-mono">
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border border-secondary rounded h-100">
+                            <h5 class="text-qgis-yellow"><i class="bi bi-gear-fill me-2"></i>azimuth()</h5>
+                            <p class="text-muted-light small mb-0">Calcula el ángulo desde el norte en radianes basándose en el punto inicial y final de la geometría.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border border-secondary rounded h-100">
+                            <h5 class="text-qgis-yellow"><i class="bi bi-gear-fill me-2"></i>degrees()</h5>
+                            <p class="text-muted-light small mb-0">Convierte los radianes resultantes a grados decimales puros.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border border-secondary rounded h-100">
+                            <h5 class="text-qgis-yellow"><i class="bi bi-gear-fill me-2"></i>with_variable()</h5>
+                            <p class="text-muted-light small mb-0">Permite almacenar valores temporalmente (como el cuadrante o los grados puros) para no repetir fórmulas largas, haciendo el código más rápido y limpio.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border border-secondary rounded h-100">
+                            <h5 class="text-qgis-yellow"><i class="bi bi-gear-fill me-2"></i>lpad()</h5>
+                            <p class="text-muted-light small mb-0">Asegura que los grados, minutos y segundos siempre tengan dos dígitos (ej. "05" en lugar de "5"), manteniendo la tabla uniforme.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-4 border-left-qgis bg-darker rounded font-mono border-danger border-start border-4">
+                    <h5 class="text-white mb-2"><i class="bi bi-info-circle-fill text-danger me-2"></i>Naturaleza del Campo</h5>
+                    <p class="text-muted-light small mb-0"><strong>Este campo será estático.</strong> Si en el futuro modificas los vértices de tus polígonos o líneas, tendrás que volver a ejecutar la calculadora de campos para actualizar la tabla de atributos, a diferencia del Generador de Geometría que se actualiza en tiempo real solo de forma visual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Slide 4: Ejercicio Práctico -->
     <section class="slide">
         <div class="row align-items-center">
