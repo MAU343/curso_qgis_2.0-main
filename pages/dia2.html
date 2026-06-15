@@ -298,34 +298,22 @@
                 <h5 class="text-white font-mono mt-4">Expresión para la Calculadora de Campos</h5>
                 <p class="text-muted-light font-mono small mb-2">Crea un nuevo campo de tipo <strong>Texto (Cadena)</strong> con una longitud de al menos 20 caracteres y pega el siguiente código:</p>
                 <div class="code-container bg-dark border border-secondary rounded p-3 position-relative overflow-auto" style="max-height: 250px;">
-                    <pre><code class="text-qgis-yellow font-mono small">with_variable('az', degrees(azimuth(start_point($geometry), end_point($geometry))),
-  with_variable('quadrant',
-    CASE
-      WHEN @az >= 0 AND @az <= 90 THEN 1
-      WHEN @az > 90 AND @az <= 180 THEN 2
-      WHEN @az > 180 AND @az <= 270 THEN 3
-      WHEN @az > 270 AND @az <= 360 THEN 4
-    END,
-    with_variable('r_deg',
-      CASE
-        WHEN @quadrant = 1 THEN @az
-        WHEN @quadrant = 2 THEN 180 - @az
-        WHEN @quadrant = 3 THEN @az - 180
-        WHEN @quadrant = 4 THEN 360 - @az
-      END,
-      with_variable('d', floor(@r_deg),
-        with_variable('m', floor((@r_deg - @d) * 60),
-          with_variable('s', round((((@r_deg - @d) * 60) - @m) * 60, 0),
-            CASE WHEN @quadrant IN (1, 4) THEN 'N ' ELSE 'S ' END ||
-            lpad(@d, 2, '0') || '-' ||
-            lpad(@m, 2, '0') || '-' ||
-            lpad(@s, 2, '0') ||
-            CASE WHEN @quadrant IN (1, 2) THEN ' E' ELSE ' W' END
-          )
+                    <pre><code class="text-qgis-yellow font-mono small">with_variable('max_y',
+    aggregate(layer:=@layer, aggregate:='max', expression:=round(y($geometry), 4)),
+    with_variable('id_norte',
+        aggregate(layer:=@layer, aggregate:='min', expression:=$id, filter:=round(y($geometry), 4) = @max_y),
+        with_variable('total_puntos',
+            aggregate(layer:=@layer, aggregate:='count', expression:=$id),
+            
+            to_int(
+                if(
+                    $id >= @id_norte,
+                    $id - @id_norte + 1,
+                    $id - @id_norte + 1 + @total_puntos
+                )
+            )
         )
-      )
     )
-  )
 )</code></pre>
                 </div>
             </div>
