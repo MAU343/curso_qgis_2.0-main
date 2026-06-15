@@ -43,9 +43,17 @@ async function mostrarDashboard() {
     await cargarRegistros();
 }
 
+function formatearFecha(ts) {
+    const d = new Date(ts);
+    return d.toLocaleDateString('es-MX', {
+        year: 'numeric', month: 'short', day: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+    });
+}
+
 async function cargarRegistros() {
     const container = document.getElementById('asistenciaContainer');
-    const countInfo = document.getElementById('countInfo');
+    const countInfo = document.getElementById('asistenciaCountInfo');
     const emptyState = document.getElementById('emptyState');
 
     container.innerHTML = '<p class="text-muted font-mono small text-center">Cargando asistencias...</p>';
@@ -174,3 +182,96 @@ function cerrarSesion() {
     document.getElementById('loginSection').classList.remove('d-none');
     document.getElementById('loginForm').reset();
 }
+
+// ---- COMMENTS ADMIN ----
+
+async function cargarComentariosAdmin() {
+    const dia = document.getElementById('comentarioDiaSelect').value;
+    const container = document.getElementById('comentariosAdminContainer');
+    const emptyState = document.getElementById('comentariosEmptyState');
+
+    container.innerHTML = '<p class="text-muted font-mono small text-center">Cargando comentarios...</p>';
+    emptyState.classList.add('d-none');
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/curso/comments/${dia}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (res.status === 401) { cerrarSesion(); return; }
+        if (!res.ok) throw new Error('Error al cargar');
+
+        const data = await res.json();
+
+        if (!data.length) {
+            container.innerHTML = '';
+            emptyState.classList.remove('d-none');
+            return;
+        }
+
+        container.innerHTML = `
+            <div class="table-responsive">
+                <table class="table table-dark table-bordered border-secondary admin-comments-table mb-0">
+                    <thead class="text-qgis-yellow text-uppercase font-mono small" style="background-color:#1e1e1e;">
+                        <tr>
+                            <th style="width:50px;">#</th>
+                            <th>Comentario</th>
+                            <th style="width:180px;">Fecha</th>
+                            <th style="width:80px;">Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${data.map((c, i) => `
+                            <tr>
+                                <td class="text-muted">${i + 1}</td>
+                                <td class="comment-content-cell text-light">${escapeHtml(c.content)}</td>
+                                <td class="text-muted">${formatearFecha(c.created_at)}</td>
+                                <td>
+                                    <button class="btn-delete-comment font-mono small" onclick="eliminarComentario(${c.id})">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-muted font-mono small mt-2">${data.length} comentario(s) para Dia ${dia}</p>
+        `;
+    } catch (err) {
+        container.innerHTML = `<p class="text-center text-danger font-mono small">Error al cargar: ${err.message}</p>`;
+    }
+}
+
+async function eliminarComentario(id) {
+    if (!confirm('Eliminar este comentario permanentemente?')) return;
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/curso/comments/${id}`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (res.status === 401) { cerrarSesion(); return; }
+        if (!res.ok) throw new Error('Error al eliminar');
+
+        cargarComentariosAdmin();
+    } catch (err) {
+        alert('Error al eliminar: ' + err.message);
+    }
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const select = document.getElementById('comentarioDiaSelect');
+    select.addEventListener('change', () => cargarComentariosAdmin());
+
+    document.getElementById('comentariosTab').addEventListener('shown.bs.tab', () => {
+        cargarComentariosAdmin();
+    });
+});
