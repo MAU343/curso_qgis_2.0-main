@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="es" class="presentation-mode">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación Día 3 | Curso QGIS Civil</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;500;700;900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+
 <body>
 
     <a href="../index.html#temario" class="btn btn-outline-qgis btn-exit-presentation font-mono">
@@ -22,8 +26,10 @@
         <div class="grid-overlay"></div>
         <div class="position-relative z-index-1">
             <h2 class="slide-subtitle font-mono">Día 3</h2>
-            <h1 class="slide-title">Topografía GNSS y <br><span class="text-gradient-qgis">Automatización de Planimetría</span></h1>
-            <p class="slide-text mt-4">Vincular la captura física de datos en campo con el entorno SIG para automatizar el dibujo topográfico.</p>
+            <h1 class="slide-title">Topografía GNSS y <br><span class="text-gradient-qgis">Automatización de
+                    Planimetría</span></h1>
+            <p class="slide-text mt-4">Vincular la captura física de datos en campo con el entorno SIG para automatizar
+                el dibujo topográfico.</p>
         </div>
     </section>
 
@@ -35,7 +41,8 @@
                 <div class="row g-4 font-mono">
                     <div class="col-md-6">
                         <div class="p-4 bg-dark border-start border-4 border-success h-100">
-                            <h4 class="text-white"><i class="bi bi-broadcast text-success me-2"></i>Estado del Receptor</h4>
+                            <h4 class="text-white"><i class="bi bi-broadcast text-success me-2"></i>Estado del Receptor
+                            </h4>
                             <ul class="text-muted-light small list-unstyled mt-3">
                                 <li class="mb-2"><strong>ID:</strong> TERSUS-GNSS-765</li>
                                 <li class="mb-2"><strong>MODO:</strong> RTK MÓVIL [FIXED]</li>
@@ -46,12 +53,13 @@
                     </div>
                     <div class="col-md-6">
                         <div class="p-4 bg-dark border-start border-4 border-qgis h-100">
-                            <h4 class="text-white"><i class="bi bi-folder-fill text-qgis-yellow me-2"></i>Configuración de Proyecto</h4>
+                            <h4 class="text-white"><i class="bi bi-folder-fill text-qgis-yellow me-2"></i>Configuración
+                                de Proyecto</h4>
                             <ul class="text-muted-light small list-unstyled mt-3">
                                 <li class="mb-2"><strong>PROYECTO:</strong> SOP_UTM15N</li>
                                 <li class="mb-2"><strong>SISTEMA:</strong> WGS84 / UTM ZONA 15N</li>
                                 <li class="mb-2"><strong>UNIDADES:</strong> Metros</li>
-                                <li><strong>GEOIDE:</strong> EGM2008</li>
+                                <li><strong>GEOIDE:</strong> GM25</li>
                             </ul>
                         </div>
                     </div>
@@ -102,21 +110,24 @@
                         <div class="p-4 bg-dark border border-secondary rounded h-100 text-center">
                             <i class="bi bi-rulers text-qgis-yellow display-4 mb-3 d-block"></i>
                             <h5 class="text-white">Unidades y Formatos</h5>
-                            <p class="text-muted-light small mt-3">Sistema métrico estándar y formatos de grados sexagesimales activados.</p>
+                            <p class="text-muted-light small mt-3">Sistema métrico estándar y formatos de grados
+                                sexagesimales activados.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-dark border border-secondary rounded h-100 text-center">
                             <i class="bi bi-bluetooth text-primary display-4 mb-3 d-block"></i>
                             <h5 class="text-white">Conexión</h5>
-                            <p class="text-muted-light small mt-3">Módulo Bluetooth vinculado al número de serie del receptor Tersus.</p>
+                            <p class="text-muted-light small mt-3">Módulo Bluetooth vinculado al número de serie del
+                                receptor Tersus.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-dark border border-secondary rounded h-100 text-center">
                             <i class="bi bi-volume-up text-success display-4 mb-3 d-block"></i>
                             <h5 class="text-white">Interfaz de Usuario</h5>
-                            <p class="text-muted-light small mt-3">Alertas sonoras de pérdida de señal (Fixed/Float) y confirmación auditiva.</p>
+                            <p class="text-muted-light small mt-3">Alertas sonoras de pérdida de señal (Fixed/Float) y
+                                confirmación auditiva.</p>
                         </div>
                     </div>
                 </div>
@@ -132,9 +143,12 @@
                 <h2 class="slide-subtitle">Arquitectura del Proyecto</h2>
                 <p class="slide-text">Las tres capas fundamentales para definir la posición.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
-                    <li><i class="bi bi-circle-fill text-success me-3"></i> <strong>Ajustes de Plano (Local):</strong> Correcciones topográficas locales o calibraciones de sitio específicas.</li>
-                    <li><i class="bi bi-circle-fill text-info me-3"></i> <strong>Transformación Datum/Geoide:</strong> Ajustes de altura ortométrica y ondulación geoidal.</li>
-                    <li><i class="bi bi-circle-fill text-secondary me-3"></i> <strong>Elipsoide Base:</strong> El modelo matemático fundamental de la Tierra (Ej. WGS84).</li>
+                    <li><i class="bi bi-circle-fill text-success me-3"></i> <strong>Ajustes de Plano (Local):</strong>
+                        Correcciones topográficas locales o calibraciones de sitio específicas.</li>
+                    <li><i class="bi bi-circle-fill text-info me-3"></i> <strong>Transformación Datum/Geoide:</strong>
+                        Ajustes de altura ortométrica y ondulación geoidal.</li>
+                    <li><i class="bi bi-circle-fill text-secondary me-3"></i> <strong>Elipsoide Base:</strong> El modelo
+                        matemático fundamental de la Tierra (Ej. WGS84).</li>
                 </ul>
             </div>
         </div>
@@ -147,7 +161,8 @@
                 <i class="bi bi-plus-square-dotted slide-icon text-warning"></i>
                 <h2 class="slide-subtitle">Creación de Sistemas de Coordenadas</h2>
                 <div class="mt-4 p-4 border border-secondary bg-darker rounded font-mono">
-                    <h5 class="text-white mb-3">Ruta en NUWA: <span class="text-warning">Proyecto > Sistemas > Nuevo</span></h5>
+                    <h5 class="text-white mb-3">Ruta en NUWA: <span class="text-warning">Proyecto > Sistemas >
+                            Nuevo</span></h5>
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="text-muted-light small list-unstyled">
@@ -160,7 +175,8 @@
                         </div>
                         <div class="col-md-6 d-flex align-items-center">
                             <div class="alert alert-danger bg-dark border-danger text-danger w-100 mb-0">
-                                <i class="bi bi-exclamation-triangle-fill me-2"></i>El sistema dicta la precisión absoluta. Un error invalida los datos recolectados.
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>El sistema dicta la precisión
+                                absoluta. Un error invalida los datos recolectados.
                             </div>
                         </div>
                     </div>
@@ -178,15 +194,20 @@
                     <div class="row">
                         <div class="col-md-6 border-end border-secondary">
                             <ul class="text-light fs-5 list-unstyled mb-0">
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Elipsoide:</strong> <span class="text-success">WGS84</span></li>
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Proyección:</strong> Transverse Mercator (TM)</li>
-                                <li class="mb-3"><strong>Falso Este:</strong> <span class="text-warning">500000.000 m</span></li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Elipsoide:</strong> <span
+                                        class="text-success">WGS84</span></li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Proyección:</strong>
+                                    Transverse Mercator (TM)</li>
+                                <li class="mb-3"><strong>Falso Este:</strong> <span class="text-warning">500000.000
+                                        m</span></li>
                             </ul>
                         </div>
                         <div class="col-md-6 ps-4">
                             <ul class="text-light fs-5 list-unstyled mb-0">
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Falso Norte:</strong> 0.000 m (Hemisferio Norte)</li>
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Meridiano Central:</strong> <span class="text-success">-93.000000°</span></li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Falso Norte:</strong> 0.000
+                                    m (Hemisferio Norte)</li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Meridiano Central:</strong>
+                                    <span class="text-success">-93.000000°</span></li>
                                 <li class="mb-3"><strong>Factor de Escala:</strong> 0.9996</li>
                             </ul>
                         </div>
@@ -202,9 +223,12 @@
             <div class="col-lg-10">
                 <i class="bi bi-broadcast-pin slide-icon text-danger"></i>
                 <h2 class="slide-subtitle">Arquitectura RTK (Radio Interno)</h2>
-                <p class="slide-text">Transmisión de correcciones (Tx) desde la Base hacia la Recepción (Rx) en el Rover para lograr Solución Fija.</p>
+                <p class="slide-text">Transmisión de correcciones (Tx) desde la Base hacia la Recepción (Rx) en el Rover
+                    para lograr Solución Fija.</p>
                 <div class="mt-4 p-4 border border-warning bg-darker rounded font-mono text-warning">
-                    <i class="bi bi-shield-check me-2"></i>El modo Radio Interno (UHF) garantiza <strong>autonomía total en campo</strong>. La Base y el Rover se comunican directamente sin depender de redes celulares o NTRIP.
+                    <i class="bi bi-shield-check me-2"></i>El modo Radio Interno (UHF) garantiza <strong>autonomía total
+                        en campo</strong>. La Base y el Rover se comunican directamente sin depender de redes celulares
+                    o NTRIP.
                 </div>
             </div>
         </div>
@@ -219,7 +243,8 @@
                     <div class="col-md-4">
                         <div class="p-4 bg-dark border-start border-4 border-warning h-100">
                             <h4 class="text-white">1. Enlace</h4>
-                            <p class="text-muted-light small mt-3">Modo: Radio Interno<br>Rol: <strong>Transmisión (Tx)</strong></p>
+                            <p class="text-muted-light small mt-3">Modo: Radio Interno<br>Rol: <strong>Transmisión
+                                    (Tx)</strong></p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -235,7 +260,8 @@
                     <div class="col-md-4">
                         <div class="p-4 bg-dark border-start border-4 border-info h-100">
                             <h4 class="text-white">3. Partida</h4>
-                            <p class="text-muted-light small mt-3">Punto Conocido (preciso) vs Modo Autónomo (promedio relativo).</p>
+                            <p class="text-muted-light small mt-3">Punto Conocido (preciso) vs Modo Autónomo (promedio
+                                relativo).</p>
                         </div>
                     </div>
                 </div>
@@ -249,13 +275,17 @@
             <div class="col-lg-10">
                 <i class="bi bi-gear-wide-connected slide-icon text-qgis-yellow"></i>
                 <h2 class="slide-subtitle">Configuración del Perfil ROVER</h2>
-                <p class="slide-text">Selección de Radio Interno configurado en modo <strong>Recepción (Rx)</strong>.</p>
+                <p class="slide-text">Selección de Radio Interno configurado en modo <strong>Recepción (Rx)</strong>.
+                </p>
                 <div class="mt-4 p-4 border-start border-4 border-warning bg-darker rounded font-mono">
                     <h4 class="text-warning mb-3">REGLA DE ORO DEL ENLACE RTK</h4>
                     <ul class="text-white fs-5 list-unstyled mb-0">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-3"></i>1. Mismo Canal / Frecuencia (460.050 MHz)</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-3"></i>2. Mismo Protocolo de Radio (TrimTalk 450s)</li>
-                        <li><i class="bi bi-check-circle-fill text-warning me-3"></i>3. Misma Tasa de Baudios (9600)</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-3"></i>1. Mismo Canal /
+                            Frecuencia (460.050 MHz)</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-3"></i>2. Mismo Protocolo de
+                            Radio (TrimTalk 450s)</li>
+                        <li><i class="bi bi-check-circle-fill text-warning me-3"></i>3. Misma Tasa de Baudios (9600)
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -268,7 +298,8 @@
             <div class="col-lg-12">
                 <h2 class="slide-subtitle text-center mb-4">Matriz Operativa: Base vs. Rover</h2>
                 <div class="table-responsive font-mono">
-                    <table class="table table-dark table-striped table-bordered border-secondary text-center align-middle">
+                    <table
+                        class="table table-dark table-striped table-bordered border-secondary text-center align-middle">
                         <thead>
                             <tr class="text-qgis-yellow">
                                 <th>Parámetro</th>
@@ -277,10 +308,26 @@
                             </tr>
                         </thead>
                         <tbody class="text-light">
-                            <tr><td>Rol Principal</td><td class="text-warning">Referencia Estática</td><td class="text-info">Captura Móvil</td></tr>
-                            <tr><td>Estado de Radio</td><td>Transmisor (Tx)</td><td>Receptor (Rx)</td></tr>
-                            <tr><td>Posición Inicial</td><td>Punto Conocido / Autónomo</td><td>Dinámica (Calculada)</td></tr>
-                            <tr><td>Diferencial</td><td>Emisión RTCM</td><td>Recepción RTCM</td></tr>
+                            <tr>
+                                <td>Rol Principal</td>
+                                <td class="text-warning">Referencia Estática</td>
+                                <td class="text-info">Captura Móvil</td>
+                            </tr>
+                            <tr>
+                                <td>Estado de Radio</td>
+                                <td>Transmisor (Tx)</td>
+                                <td>Receptor (Rx)</td>
+                            </tr>
+                            <tr>
+                                <td>Posición Inicial</td>
+                                <td>Punto Conocido / Autónomo</td>
+                                <td>Dinámica (Calculada)</td>
+                            </tr>
+                            <tr>
+                                <td>Diferencial</td>
+                                <td>Emisión RTCM</td>
+                                <td>Recepción RTCM</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -299,7 +346,8 @@
                             <i class="bi bi-shield-lock text-danger display-4 mb-3 d-block"></i>
                             <h5 class="text-white">Tolerancia Solución</h5>
                             <p class="text-warning fs-5 fw-bold mb-2">FIJO (Fixed)</p>
-                            <p class="text-muted-light small">Bloquea captura si el equipo está en Flotante o Autónomo.</p>
+                            <p class="text-muted-light small">Bloquea captura si el equipo está en Flotante o Autónomo.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -307,7 +355,8 @@
                             <i class="bi bi-graph-up text-success display-4 mb-3 d-block"></i>
                             <h5 class="text-white">Promedio de Épocas</h5>
                             <p class="text-success fs-5 fw-bold mb-2">3 a 5 épocas</p>
-                            <p class="text-muted-light small">Suaviza anomalías satelitales al promediar lecturas múltiples.</p>
+                            <p class="text-muted-light small">Suaviza anomalías satelitales al promediar lecturas
+                                múltiples.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -315,7 +364,8 @@
                             <i class="bi bi-bullseye text-info display-4 mb-3 d-block"></i>
                             <h5 class="text-white">Límite RMS (H/V)</h5>
                             <p class="text-info fs-5 fw-bold mb-2">H: 0.015m, V: 0.020m</p>
-                            <p class="text-muted-light small">Establece tolerancias estrictas de error cuadrático medio.</p>
+                            <p class="text-muted-light small">Establece tolerancias estrictas de error cuadrático medio.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -332,10 +382,17 @@
                 <p class="slide-text">Configuración de Post-Proceso para alcanzar máxima densidad de datos.</p>
                 <div class="mt-4 p-4 border border-secondary bg-darker rounded font-mono">
                     <ul class="text-muted-light fs-5 list-unstyled mb-0">
-                        <li class="mb-3 border-bottom border-secondary pb-2"><i class="bi bi-database text-success me-2"></i><strong>Grabación de Datos Crudos (Raw Data):</strong> Activado</li>
-                        <li class="mb-3 border-bottom border-secondary pb-2"><i class="bi bi-clock text-warning me-2"></i><strong>Intervalo de Grabación:</strong> 1s (alta densidad) o 5s (larga duración)</li>
-                        <li class="mb-3 border-bottom border-secondary pb-2"><i class="bi bi-funnel text-danger me-2"></i><strong>Máscara de Elevación:</strong> 10° a 15° (Descarta ruido atmosférico)</li>
-                        <li><i class="bi bi-arrows-collapse-vertical text-info me-2"></i><strong>Altura de Antena:</strong> Ingreso manual meticuloso al centro de fase</li>
+                        <li class="mb-3 border-bottom border-secondary pb-2"><i
+                                class="bi bi-database text-success me-2"></i><strong>Grabación de Datos Crudos (Raw
+                                Data):</strong> Activado</li>
+                        <li class="mb-3 border-bottom border-secondary pb-2"><i
+                                class="bi bi-clock text-warning me-2"></i><strong>Intervalo de Grabación:</strong> 1s
+                            (alta densidad) o 5s (larga duración)</li>
+                        <li class="mb-3 border-bottom border-secondary pb-2"><i
+                                class="bi bi-funnel text-danger me-2"></i><strong>Máscara de Elevación:</strong> 10° a
+                            15° (Descarta ruido atmosférico)</li>
+                        <li><i class="bi bi-arrows-collapse-vertical text-info me-2"></i><strong>Altura de
+                                Antena:</strong> Ingreso manual meticuloso al centro de fase</li>
                     </ul>
                 </div>
             </div>
@@ -350,19 +407,23 @@
                 <div class="row g-4 font-mono">
                     <div class="col-md-6">
                         <div class="p-4 bg-dark border-start border-4 border-warning h-100">
-                            <h4 class="text-white"><i class="bi bi-signpost-split me-2 text-warning"></i>Desplazamiento / Offsets</h4>
-                            <p class="text-muted-light small mt-3">Cálculo de un punto inaccesible (ej. bajo un árbol) aplicando un offset (Azimut + Distancia) desde una coordenada conocida.</p>
+                            <h4 class="text-white"><i class="bi bi-signpost-split me-2 text-warning"></i>Desplazamiento
+                                / Offsets</h4>
+                            <p class="text-muted-light small mt-3">Cálculo de un punto inaccesible (ej. bajo un árbol)
+                                aplicando un offset (Azimut + Distancia) desde una coordenada conocida.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="p-4 bg-dark border-start border-4 border-info h-100">
                             <h4 class="text-white"><i class="bi bi-intersect me-2 text-info"></i>Intersección</h4>
-                            <p class="text-muted-light small mt-3">Determinación de un tercer punto oculto mediante la intersección matemática de dos radios o ángulos conocidos.</p>
+                            <p class="text-muted-light small mt-3">Determinación de un tercer punto oculto mediante la
+                                intersección matemática de dos radios o ángulos conocidos.</p>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="alert alert-info bg-darker border-info text-info mb-0 text-center">
-                            Utilice el menú de utilidades de NUWA para calcular posiciones inaccesibles sin perder la inicialización RTK.
+                            Utilice el menú de utilidades de NUWA para calcular posiciones inaccesibles sin perder la
+                            inicialización RTK.
                         </div>
                     </div>
                 </div>
@@ -376,11 +437,26 @@
             <div class="col-lg-12">
                 <h2 class="slide-subtitle text-center mb-5">Lista de Verificación Pre-Levantamiento</h2>
                 <div class="row font-mono g-3">
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>1. Sistema:</strong> Coordenadas y Proyección confirmadas.</div></div>
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>2. Hardware:</strong> Altura de jalón ingresada correctamente.</div></div>
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>3. Físico:</strong> Burbuja de nivelación perfectamente centrada.</div></div>
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>4. Enlace:</strong> Icono de Radio Rx parpadeando.</div></div>
-                    <div class="col-md-12"><div class="p-3 bg-dark border-start border-4 border-success h-100 text-center"><strong>5. Precisión:</strong> Estado "FIJO" con RMS dentro de tolerancia.</div></div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>1. Sistema:</strong>
+                            Coordenadas y Proyección confirmadas.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>2.
+                                Hardware:</strong> Altura de jalón ingresada correctamente.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>3. Físico:</strong>
+                            Burbuja de nivelación perfectamente centrada.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>4. Enlace:</strong>
+                            Icono de Radio Rx parpadeando.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="p-3 bg-dark border-start border-4 border-success h-100 text-center"><strong>5.
+                                Precisión:</strong> Estado "FIJO" con RMS dentro de tolerancia.</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -392,7 +468,9 @@
             <div class="col-lg-12">
                 <i class="bi bi-check-circle-fill slide-icon text-success" style="font-size: 5rem;"></i>
                 <h2 class="slide-subtitle mt-4">Precisión Milimétrica Asegurada</h2>
-                <p class="slide-text w-75 mx-auto mt-4">El dominio del flujo de trabajo secuencial en NUWA garantiza operaciones de campo consistentes, autónomas y de alta precisión.<br><br>El equipo Tersus está listo para operar.</p>
+                <p class="slide-text w-75 mx-auto mt-4">El dominio del flujo de trabajo secuencial en NUWA garantiza
+                    operaciones de campo consistentes, autónomas y de alta precisión.<br><br>El equipo Tersus está listo
+                    para operar.</p>
             </div>
         </div>
     </section>
@@ -405,21 +483,24 @@
                         <div class="p-4 bg-dark border-top border-3 border-qgis h-100 text-center">
                             <i class="bi bi-crosshair text-qgis-yellow display-4 mb-3 d-block"></i>
                             <h4 class="text-white">Precisión & Cobertura</h4>
-                            <p class="text-muted-light small mt-3">Posicionamiento global milimétrico y alcances mayores a 20 km frente a instrumentos ópticos.</p>
+                            <p class="text-muted-light small mt-3">Posicionamiento global milimétrico y alcances mayores
+                                a 20 km frente a instrumentos ópticos.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-dark border-top border-3 border-warning h-100 text-center">
                             <i class="bi bi-stopwatch text-qgis-yellow display-4 mb-3 d-block"></i>
                             <h4 class="text-white">Eficiencia en Terreno</h4>
-                            <p class="text-muted-light small mt-3">Reducción del 60% del tiempo en mediciones y acceso a áreas peligrosas sin riesgo.</p>
+                            <p class="text-muted-light small mt-3">Reducción del 60% del tiempo en mediciones y acceso a
+                                áreas peligrosas sin riesgo.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-dark border-top border-3 border-success h-100 text-center">
                             <i class="bi bi-diagram-3 text-qgis-yellow display-4 mb-3 d-block"></i>
                             <h4 class="text-white">Integración Digital</h4>
-                            <p class="text-muted-light small mt-3">Exportación directa y 100% nativa a sistemas CAD y SIG para un flujo de trabajo continuo.</p>
+                            <p class="text-muted-light small mt-3">Exportación directa y 100% nativa a sistemas CAD y
+                                SIG para un flujo de trabajo continuo.</p>
                         </div>
                     </div>
                 </div>
@@ -433,10 +514,14 @@
             <div class="col-lg-10">
                 <i class="bi bi-globe-americas slide-icon text-qgis-yellow"></i>
                 <h2 class="slide-subtitle">Desmitificando: GPS ≠ GNSS</h2>
-                <p class="slide-text">El <strong>GNSS</strong> es el sistema global, mientras que el GPS es solo el componente operado por EE.UU.</p>
+                <p class="slide-text">El <strong>GNSS</strong> es el sistema global, mientras que el GPS es solo el
+                    componente operado por EE.UU.</p>
                 <div class="mt-5 p-4 border border-secondary bg-darker rounded font-mono">
-                    <h4 class="text-white mb-3"><i class="bi bi-broadcast text-qgis-light me-2"></i>El Principio de Trilateración</h4>
-                    <p class="text-muted-light fs-5 mb-0">Un receptor necesita recibir señales de al menos <strong>4 satélites simultáneamente</strong> para calcular la ubicación tridimensional exacta (Latitud, Longitud, Altura y Tiempo).</p>
+                    <h4 class="text-white mb-3"><i class="bi bi-broadcast text-qgis-light me-2"></i>El Principio de
+                        Trilateración</h4>
+                    <p class="text-muted-light fs-5 mb-0">Un receptor necesita recibir señales de al menos <strong>4
+                            satélites simultáneamente</strong> para calcular la ubicación tridimensional exacta
+                        (Latitud, Longitud, Altura y Tiempo).</p>
                 </div>
             </div>
         </div>
@@ -448,7 +533,8 @@
             <div class="col-lg-12">
                 <h2 class="slide-subtitle mb-4">Matriz de Constelaciones Globales</h2>
                 <div class="table-responsive font-mono">
-                    <table class="table table-dark table-striped table-bordered border-secondary text-center align-middle">
+                    <table
+                        class="table table-dark table-striped table-bordered border-secondary text-center align-middle">
                         <thead>
                             <tr class="text-qgis-yellow">
                                 <th>Origen</th>
@@ -458,15 +544,36 @@
                             </tr>
                         </thead>
                         <tbody class="text-light">
-                            <tr><td><i class="bi bi-flag-fill me-2 text-danger"></i>EE.UU.</td><td>GPS</td><td>30 - 32</td><td class="text-success"><i class="bi bi-check-circle-fill me-1"></i> Global</td></tr>
-                            <tr><td><i class="bi bi-flag-fill me-2 text-primary"></i>Rusia</td><td>GLONASS</td><td>24 - 26</td><td class="text-success"><i class="bi bi-check-circle-fill me-1"></i> Global</td></tr>
-                            <tr><td><i class="bi bi-flag-fill me-2 text-info"></i>Europa</td><td>Galileo</td><td>25 - 32</td><td class="text-success"><i class="bi bi-check-circle-fill me-1"></i> Global</td></tr>
-                            <tr><td><i class="bi bi-flag-fill me-2 text-warning"></i>China</td><td>BeiDou (BDS)</td><td>44 - 54</td><td class="text-success"><i class="bi bi-check-circle-fill me-1"></i> Global</td></tr>
+                            <tr>
+                                <td><i class="bi bi-flag-fill me-2 text-danger"></i>EE.UU.</td>
+                                <td>GPS</td>
+                                <td>30 - 32</td>
+                                <td class="text-success"><i class="bi bi-check-circle-fill me-1"></i> Global</td>
+                            </tr>
+                            <tr>
+                                <td><i class="bi bi-flag-fill me-2 text-primary"></i>Rusia</td>
+                                <td>GLONASS</td>
+                                <td>24 - 26</td>
+                                <td class="text-success"><i class="bi bi-check-circle-fill me-1"></i> Global</td>
+                            </tr>
+                            <tr>
+                                <td><i class="bi bi-flag-fill me-2 text-info"></i>Europa</td>
+                                <td>Galileo</td>
+                                <td>25 - 32</td>
+                                <td class="text-success"><i class="bi bi-check-circle-fill me-1"></i> Global</td>
+                            </tr>
+                            <tr>
+                                <td><i class="bi bi-flag-fill me-2 text-warning"></i>China</td>
+                                <td>BeiDou (BDS)</td>
+                                <td>44 - 54</td>
+                                <td class="text-success"><i class="bi bi-check-circle-fill me-1"></i> Global</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="alert alert-warning bg-dark border-warning text-warning font-mono mt-3">
-                    <i class="bi bi-cpu-fill me-2"></i>Los receptores modernos leen todas simultáneamente garantizando máxima redundancia.
+                    <i class="bi bi-cpu-fill me-2"></i>Los receptores modernos leen todas simultáneamente garantizando
+                    máxima redundancia.
                 </div>
             </div>
         </div>
@@ -478,13 +585,34 @@
             <div class="col-lg-12">
                 <h2 class="slide-subtitle text-center mb-5">Anatomía de la Estación GNSS</h2>
                 <div class="row font-mono g-3">
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-qgis h-100"><strong>7. Antena LoRa:</strong> Transmisión de radio local.</div></div>
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-qgis h-100"><strong>6. Receptor (Emlid):</strong> El cerebro informático.</div></div>
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-warning h-100"><strong>5. Alzacuellos:</strong> Extensión para elevar la antena.</div></div>
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-warning h-100"><strong>4. Adaptador:</strong> Conector de precisión.</div></div>
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-danger h-100"><strong>3. Base Nivelante (Tribrach):</strong> Calibración óptica.</div></div>
-                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-danger h-100"><strong>2. Trípode:</strong> Soporte primario.</div></div>
-                    <div class="col-md-12"><div class="p-3 bg-darker border border-secondary text-center"><strong>1. Estaca/Control:</strong> Marca física en terreno.</div></div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-qgis h-100"><strong>7. Antena
+                                LoRa:</strong> Transmisión de radio local.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-qgis h-100"><strong>6. Receptor
+                                (Emlid):</strong> El cerebro informático.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-warning h-100"><strong>5.
+                                Alzacuellos:</strong> Extensión para elevar la antena.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-warning h-100"><strong>4.
+                                Adaptador:</strong> Conector de precisión.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-danger h-100"><strong>3. Base Nivelante
+                                (Tribrach):</strong> Calibración óptica.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 bg-dark border-start border-4 border-danger h-100"><strong>2. Trípode:</strong>
+                            Soporte primario.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="p-3 bg-darker border border-secondary text-center"><strong>1.
+                                Estaca/Control:</strong> Marca física en terreno.</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -499,15 +627,18 @@
                 <div class="d-flex flex-wrap justify-content-center gap-4 font-mono text-center">
                     <div class="card bg-dark border-secondary p-4" style="width: 300px;">
                         <h4 class="text-white">1. Geometría</h4>
-                        <p class="text-muted-light small mt-3">Separar patas a 60° formando un triángulo equilátero y subir base a altura de los ojos.</p>
+                        <p class="text-muted-light small mt-3">Separar patas a 60° formando un triángulo equilátero y
+                            subir base a altura de los ojos.</p>
                     </div>
                     <div class="card bg-dark border-secondary p-4" style="width: 300px;">
                         <h4 class="text-white">2. Plomada</h4>
-                        <p class="text-muted-light small mt-3">Ajustar la base nivelante hasta que la mira óptica coincida con la estaca.</p>
+                        <p class="text-muted-light small mt-3">Ajustar la base nivelante hasta que la mira óptica
+                            coincida con la estaca.</p>
                     </div>
                     <div class="card bg-dark border-secondary p-4" style="width: 300px;">
                         <h4 class="text-white">3. Calibración</h4>
-                        <p class="text-muted-light small mt-3">Aflojar la pata contraria a la burbuja hasta centrarla perfectamente.</p>
+                        <p class="text-muted-light small mt-3">Aflojar la pata contraria a la burbuja hasta centrarla
+                            perfectamente.</p>
                     </div>
                 </div>
             </div>
@@ -522,10 +653,14 @@
                 <h2 class="slide-subtitle">Interfaz Digital: Emlid Flow</h2>
                 <p class="slide-text">El control absoluto del equipo desde tu smartphone.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
-                    <li><i class="bi bi-circle-fill text-success me-3"></i> <strong>Semáforo SNR (Verde):</strong> Relación Señal/Ruido óptima. Conexión limpia.</li>
-                    <li><i class="bi bi-circle-fill text-danger me-3"></i> <strong>Semáforo SNR (Rojo/Amarillo):</strong> Interferencia o ruido satelital.</li>
-                    <li><i class="bi bi-bar-chart-fill text-qgis-light me-3"></i> <strong>PDOP:</strong> Calidad de la geometría satelital (mientras más bajo, mejor).</li>
-                    <li><i class="bi bi-geo-alt-fill text-qgis-light me-3"></i> <strong>Coordinates:</strong> Lectura real de Lat/Lon y desviación estándar (σ).</li>
+                    <li><i class="bi bi-circle-fill text-success me-3"></i> <strong>Semáforo SNR (Verde):</strong>
+                        Relación Señal/Ruido óptima. Conexión limpia.</li>
+                    <li><i class="bi bi-circle-fill text-danger me-3"></i> <strong>Semáforo SNR
+                            (Rojo/Amarillo):</strong> Interferencia o ruido satelital.</li>
+                    <li><i class="bi bi-bar-chart-fill text-qgis-light me-3"></i> <strong>PDOP:</strong> Calidad de la
+                        geometría satelital (mientras más bajo, mejor).</li>
+                    <li><i class="bi bi-geo-alt-fill text-qgis-light me-3"></i> <strong>Coordinates:</strong> Lectura
+                        real de Lat/Lon y desviación estándar (σ).</li>
                 </ul>
             </div>
         </div>
@@ -546,8 +681,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="p-3 bg-dark border border-danger rounded">
-                            <h5 class="text-danger"><i class="bi bi-exclamation-triangle-fill me-2"></i>2. Aislamiento de Red</h5>
-                            <p class="text-muted-light small mb-0"><strong>CRÍTICO:</strong> Desactivar datos 4G/5G del móvil para forzar conexión local.</p>
+                            <h5 class="text-danger"><i class="bi bi-exclamation-triangle-fill me-2"></i>2. Aislamiento
+                                de Red</h5>
+                            <p class="text-muted-light small mb-0"><strong>CRÍTICO:</strong> Desactivar datos 4G/5G del
+                                móvil para forzar conexión local.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -575,22 +712,29 @@
                 <div class="row g-4 font-mono">
                     <div class="col-md-6">
                         <div class="card bg-darker border-qgis h-100 p-4">
-                            <h4 class="text-qgis-yellow text-center mb-4"><i class="bi bi-funnel-fill me-2"></i>Filtro RTK</h4>
+                            <h4 class="text-qgis-yellow text-center mb-4"><i class="bi bi-funnel-fill me-2"></i>Filtro
+                                RTK</h4>
                             <ul class="text-light fs-5 list-unstyled">
                                 <li class="mb-3 border-bottom border-secondary pb-2"><strong>Mode:</strong> Static</li>
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Elevation Mask:</strong> 15° (Filtra bajos)</li>
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>SNR Mask:</strong> 35 (Filtra ruido)</li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Elevation Mask:</strong>
+                                    15° (Filtra bajos)</li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>SNR Mask:</strong> 35
+                                    (Filtra ruido)</li>
                                 <li class="mb-3"><strong>Constelaciones:</strong> GPS+GLONASS+Galileo (1Hz)</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card bg-darker border-warning h-100 p-4">
-                            <h4 class="text-warning text-center mb-4"><i class="bi bi-broadcast me-2"></i>Base Mode (Radio)</h4>
+                            <h4 class="text-warning text-center mb-4"><i class="bi bi-broadcast me-2"></i>Base Mode
+                                (Radio)</h4>
                             <ul class="text-light fs-5 list-unstyled">
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Corrections:</strong> LoRa</li>
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Output Power:</strong> 20 dBm</li>
-                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Frequency:</strong> 902.0 MHz</li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Corrections:</strong> LoRa
+                                </li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Output Power:</strong> 20
+                                    dBm</li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Frequency:</strong> 902.0
+                                    MHz</li>
                                 <li class="mb-3"><strong>Air Data Rate:</strong> 9.11 kb/s</li>
                             </ul>
                         </div>
@@ -607,10 +751,12 @@
                 <i class="bi bi-pin-map-fill slide-icon text-danger"></i>
                 <h2 class="slide-subtitle">Establecimiento de Base</h2>
                 <p class="slide-text">El anclaje matemático de las coordenadas locales.</p>
-                
+
                 <div class="mt-4 p-4 bg-dark border border-secondary rounded font-mono">
                     <h5 class="text-white mb-3">Procedimiento: <span class="text-qgis-yellow">Average Single</span></h5>
-                    <p class="text-muted-light small">El receptor recolecta datos satelitales durante <strong>3 minutos ininterrumpidos</strong>. Al finalizar, promedia matemáticamente todas las lecturas para anclar sus coordenadas con altísima precisión antes de mandar correcciones al Rover.</p>
+                    <p class="text-muted-light small">El receptor recolecta datos satelitales durante <strong>3 minutos
+                            ininterrumpidos</strong>. Al finalizar, promedia matemáticamente todas las lecturas para
+                        anclar sus coordenadas con altísima precisión antes de mandar correcciones al Rover.</p>
                 </div>
             </div>
         </div>
@@ -624,10 +770,14 @@
                 <h2 class="slide-subtitle">Captura de Datos (Logging)</h2>
                 <p class="slide-text">Registro de datos "crudos" para post-proceso en gabinete.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
-                    <li><i class="bi bi-arrow-right-short text-qgis-light fs-4 me-2"></i> <strong>Format:</strong> RINEX 2.11 / 3.03 (Estándar global).</li>
-                    <li><i class="bi bi-arrow-right-short text-qgis-light fs-4 me-2"></i> <strong>Interval:</strong> 1 s.</li>
-                    <li><i class="bi bi-arrow-right-short text-qgis-light fs-4 me-2"></i> <strong>Positioning:</strong> Formato LLH (Lat, Lon, Alt).</li>
-                    <li><i class="bi bi-arrow-right-short text-qgis-light fs-4 me-2"></i> <strong>Base corrections:</strong> Formato RTCM3.</li>
+                    <li><i class="bi bi-arrow-right-short text-qgis-light fs-4 me-2"></i> <strong>Format:</strong> RINEX
+                        2.11 / 3.03 (Estándar global).</li>
+                    <li><i class="bi bi-arrow-right-short text-qgis-light fs-4 me-2"></i> <strong>Interval:</strong> 1
+                        s.</li>
+                    <li><i class="bi bi-arrow-right-short text-qgis-light fs-4 me-2"></i> <strong>Positioning:</strong>
+                        Formato LLH (Lat, Lon, Alt).</li>
+                    <li><i class="bi bi-arrow-right-short text-qgis-light fs-4 me-2"></i> <strong>Base
+                            corrections:</strong> Formato RTCM3.</li>
                 </ul>
             </div>
         </div>
@@ -672,9 +822,12 @@
                 <h2 class="slide-subtitle mt-4">Protocolo de Emergencia</h2>
                 <p class="slide-text">Uso exclusivo ante falla crítica de conexión Wi-Fi o Radio.</p>
                 <div class="mt-4 p-3 bg-dark border border-danger rounded d-inline-block font-mono text-start mx-auto">
-                    <p class="text-white mb-2"><i class="bi bi-1-circle me-2 text-danger"></i> Ir a Settings en Emlid Flow.</p>
-                    <p class="text-white mb-2"><i class="bi bi-2-circle me-2 text-danger"></i> Seleccionar <strong>Reset settings to default</strong>.</p>
-                    <p class="text-warning small mt-3 mb-0"><i class="bi bi-shield-lock-fill me-2"></i>Nota: Se preservan los datos RINEX guardados, solo borra ajustes.</p>
+                    <p class="text-white mb-2"><i class="bi bi-1-circle me-2 text-danger"></i> Ir a Settings en Emlid
+                        Flow.</p>
+                    <p class="text-white mb-2"><i class="bi bi-2-circle me-2 text-danger"></i> Seleccionar <strong>Reset
+                            settings to default</strong>.</p>
+                    <p class="text-warning small mt-3 mb-0"><i class="bi bi-shield-lock-fill me-2"></i>Nota: Se
+                        preservan los datos RINEX guardados, solo borra ajustes.</p>
                 </div>
             </div>
         </div>
@@ -686,10 +839,12 @@
             <div class="col-lg-8">
                 <i class="bi bi-broadcast-pin slide-icon"></i>
                 <h2 class="slide-subtitle">Captura GNSS en Campo</h2>
-                <p class="slide-text">Práctica guiada con <strong>equipo GNSS</strong> para el levantamiento preciso de puntos de interés.</p>
+                <p class="slide-text">Práctica guiada con <strong>equipo GNSS</strong> para el levantamiento preciso de
+                    puntos de interés.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
                     <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Configuración del rover GNSS.</li>
-                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Captura de metadatos espaciales en campo.</li>
+                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Captura de metadatos espaciales en
+                        campo.</li>
                 </ul>
             </div>
         </div>
@@ -704,7 +859,8 @@
                 <p class="slide-text">Procesamiento de libretas de campo (archivos CSV/TXT) dentro del software SIG.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
                     <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Importación masiva de puntos.</li>
-                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Generación automatizada de la geometría del plano (líneas y polígonos).</li>
+                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Generación automatizada de la
+                        geometría del plano (líneas y polígonos).</li>
                 </ul>
             </div>
         </div>
@@ -716,10 +872,13 @@
             <div class="col-lg-10">
                 <i class="bi bi-filetype-dwg slide-icon"></i>
                 <h2 class="slide-subtitle text-white">Interoperabilidad CAD</h2>
-                <p class="slide-text mt-3">Exportación estructurada de la planimetría generada a formatos vectoriales estándar <strong>(.dxf / .dwg)</strong>.</p>
+                <p class="slide-text mt-3">Exportación estructurada de la planimetría generada a formatos vectoriales
+                    estándar <strong>(.dxf / .dwg)</strong>.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Estructuración de capas (layers) listas para CAD.</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Refinamiento en software de diseño tradicional (AutoCAD/Civil 3D).</li>
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Estructuración de capas
+                        (layers) listas para CAD.</li>
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Refinamiento en software de
+                        diseño tradicional (AutoCAD/Civil 3D).</li>
                 </ul>
             </div>
         </div>
@@ -733,4 +892,5 @@
 
     <script src="../assets/js/script.js"></script>
 </body>
+
 </html>
