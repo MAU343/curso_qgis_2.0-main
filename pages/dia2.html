@@ -409,6 +409,116 @@
         </div>
     </section>
 
+    <!-- Slide 3.4: Cálculo de Ángulo Interno -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-arrows-angle-expand slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Cálculo de Ángulo Interno</h2>
+                
+                <div class="row mt-4">
+                    <!-- Opción 1: Decimal -->
+                    <div class="col-md-6">
+                        <div class="p-3 border-top border-4 border-warning bg-darker rounded h-100">
+                            <h5 class="text-warning font-mono mb-3">Opción 1: Ángulo Decimal (Corregida)</h5>
+                            <ul class="text-muted-light small mb-3 list-unstyled font-mono">
+                                <li><strong>Nombre del campo:</strong> ang_dec</li>
+                                <li><strong>Tipo:</strong> Número decimal (real)</li>
+                                <li><strong>Precisión:</strong> 3</li>
+                            </ul>
+                            <div class="code-container bg-dark border border-secondary rounded p-2 overflow-auto" style="max-height: 200px;">
+                                <pre><code class="text-qgis-yellow font-mono" style="font-size: 0.75rem;">with_variable('geoms',
+    array_agg($geometry, order_by:="no_vertice"),
+    with_variable('idx',
+        array_find(@geoms, $geometry),
+        with_variable('n',
+            array_length(@geoms),
+            with_variable('prev_geom',
+                array_get(@geoms, if(@idx = 0, @n - 1, @idx - 1)),
+                with_variable('next_geom',
+                    array_get(@geoms, if(@idx = @n - 1, 0, @idx + 1)),
+                    with_variable('angulo',
+                        degrees(azimuth($geometry, @prev_geom)) - degrees(azimuth($geometry, @next_geom)),
+                        if(@angulo < 0, @angulo + 360, @angulo)
+                    )
+                )
+            )
+        )
+    )
+)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Opción 2: Grados -->
+                    <div class="col-md-6">
+                        <div class="p-3 border-top border-4 border-success bg-darker rounded h-100">
+                            <h5 class="text-success font-mono mb-3">Opción 2: Grados, Min, Seg (Corregida)</h5>
+                            <ul class="text-muted-light small mb-3 list-unstyled font-mono">
+                                <li><strong>Nombre del campo:</strong> ang_intern</li>
+                                <li><strong>Tipo:</strong> Texto (cadena)</li>
+                                <li><strong>Longitud:</strong> 20 <span class="text-danger fw-bold">(Importante)</span></li>
+                            </ul>
+                            <div class="code-container bg-dark border border-secondary rounded p-2 overflow-auto" style="max-height: 200px;">
+                                <pre><code class="text-qgis-light font-mono" style="font-size: 0.75rem;">with_variable('geoms',
+    array_agg($geometry, order_by:="no_vertice"),
+    with_variable('idx',
+        array_find(@geoms, $geometry),
+        with_variable('n',
+            array_length(@geoms),
+            with_variable('prev_geom',
+                array_get(@geoms, if(@idx = 0, @n - 1, @idx - 1)),
+                with_variable('next_geom',
+                    array_get(@geoms, if(@idx = @n - 1, 0, @idx + 1)),
+                    with_variable('angulo',
+                        degrees(azimuth($geometry, @prev_geom)) - degrees(azimuth($geometry, @next_geom)),
+                        with_variable('decimal',
+                            if(@angulo < 0, @angulo + 360, @angulo),
+                            with_variable('grados', floor(@decimal),
+                                with_variable('minutos', floor((@decimal - @grados) * 60),
+                                    with_variable('segundos', round(((@decimal - @grados) * 60 - @minutos) * 60, 2),
+                                        @grados || '° ' || lpad(@minutos, 2, '0') || ''' ' || lpad(@segundos, 5, '0') || '"'
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3.5: Generación de Campo Lado -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-vector-pen slide-icon text-qgis-light"></i>
+                <h2 class="slide-subtitle">Generación del Campo "Lado"</h2>
+                <div class="mt-4 p-4 border-left-qgis bg-darker rounded font-mono">
+                    <h5 class="text-white mb-2"><i class="bi bi-info-circle-fill text-info me-2"></i>Propósito del Código</h5>
+                    <p class="text-muted-light small mb-0">Esta expresión genera un texto estructurado para identificar el lado o segmento entre dos vértices consecutivos (Ejemplo: "1-2", "2-3", y uniendo el último con el primero).</p>
+                </div>
+
+                <h5 class="text-white font-mono mt-4">Expresión para la Calculadora</h5>
+                <div class="code-container bg-dark border border-secondary rounded p-3 position-relative overflow-auto">
+                    <pre><code class="text-info font-mono small">with_variable('total_puntos', 
+    aggregate(layer:=@layer, aggregate:='max', expression:="V"),
+    
+    "V" || '-' || if("V" = @total_puntos, 1, "V" + 1)
+)</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Slide 4: Ejercicio Práctico -->
     <section class="slide">
         <div class="row align-items-center">
