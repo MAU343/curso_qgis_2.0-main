@@ -15,62 +15,368 @@
         <i class="bi bi-arrow-left me-2"></i> Volver al Temario
     </a>
 
-    <!-- Slide 1: Portada Día -->
-    <section class="slide text-center">
-        <div class="bg-shape shape-1" style="top: 10%; right: 10%;"></div>
-        <div class="bg-shape shape-2" style="bottom: 10%; left: 10%;"></div>
-        <div class="grid-overlay"></div>
+    <!-- Slide 1: Portada -->
+    <section class="slide text-center bg-white">
         <div class="position-relative z-index-1">
-            <h2 class="slide-subtitle font-mono">Día 5</h2>
-            <h1 class="slide-title">Nubes de Puntos y <br><span class="text-gradient-qgis">Visualización Web (Potree)</span></h1>
-            <p class="slide-text mt-4">Visualizar y explotar datos masivos de escaneo láser 3D sin comprometer el hardware local.</p>
+            <h2 class="slide-subtitle font-mono text-secondary">Nubes de Puntos</h2>
+            <h1 class="slide-title text-dark">De polvo de estrellas a <br><span class="text-gradient-qgis">realidad digital</span></h1>
+            <p class="slide-text mt-4 text-dark fs-5">Entendiendo las nubes de puntos: qué son, cómo se capturan y para qué sirven.</p>
         </div>
     </section>
 
-    <!-- Slide 2: El Enfoque Web -->
-    <section class="slide">
+    <!-- Slide 2: El Puntillismo -->
+    <section class="slide bg-light">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-dark text-center mb-4">El puntillismo de la era digital</h2>
+                <p class="slide-text text-dark text-center mb-5">Así como los pintores impresionistas usaban miles de gotas de pintura, la tecnología moderna usa <strong class="text-qgis-yellow bg-dark px-2 rounded">millones de puntos digitales</strong> para construir una copia exacta del mundo real en 3D.</p>
+                <div class="row g-4 font-mono">
+                    <div class="col-md-6 text-center">
+                        <div class="p-4 bg-white border border-secondary shadow-sm h-100 rounded">
+                            <i class="bi bi-palette text-danger display-4 mb-3 d-block"></i>
+                            <h4 class="text-dark">Puntillismo Clásico</h4>
+                            <p class="text-secondary small mt-3">Lienzo 2D con gotas de pintura físicas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="p-4 bg-white border border-secondary shadow-sm h-100 rounded">
+                            <i class="bi bi-badge-3d text-primary display-4 mb-3 d-block"></i>
+                            <h4 class="text-dark">Nube de Puntos Digital</h4>
+                            <p class="text-secondary small mt-3">Entorno 3D con coordenadas espaciales exactas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Anatomía de un punto -->
+    <section class="slide bg-white">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-bullseye slide-icon text-danger d-block text-center mb-3"></i>
+                <h2 class="slide-subtitle text-dark text-center mb-5">La anatomía de un solo punto</h2>
+                <div class="row g-4 font-mono text-center">
+                    <div class="col-md-6">
+                        <div class="p-4 bg-light border-start border-4 border-primary shadow-sm h-100">
+                            <h4 class="text-dark">1. Posición (X, Y, Z)</h4>
+                            <p class="text-secondary small mt-3">Ubicación exacta en el espacio tridimensional basada en un sistema de coordenadas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-light border-start border-4 border-warning shadow-sm h-100">
+                            <h4 class="text-dark">2. Intensidad</h4>
+                            <p class="text-secondary small mt-3">La fuerza con la que la señal rebotó en la superficie, revelando el tipo de material.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-light border-start border-4 border-success shadow-sm h-100">
+                            <h4 class="text-dark">3. Color (RGB)</h4>
+                            <p class="text-secondary small mt-3">Su identidad visual real, obtenida de fotografías superpuestas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-light border-start border-4 border-danger shadow-sm h-100">
+                            <h4 class="text-dark">4. Clasificación</h4>
+                            <p class="text-secondary small mt-3">Su etiqueta inteligente asignada por algoritmos (ej. suelo, vegetación, edificio).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: El Poder de la Nube -->
+    <section class="slide bg-light">
         <div class="row align-items-center">
             <div class="col-lg-8">
-                <i class="bi bi-cloud-check slide-icon"></i>
-                <h2 class="slide-subtitle">Visualización Web: Potree</h2>
-                <p class="slide-text">El concepto de <strong>Potree</strong> como herramienta para la democratización de datos geoespaciales extremadamente pesados (LiDAR / Dron Zenmuse).</p>
+                <h2 class="slide-subtitle text-dark">El poder del conjunto: La Nube</h2>
+                <p class="slide-text text-dark">Un punto por sí solo no dice mucho. Pero al agrupar millones de estos puntos espaciales, obtenemos una copia fiel y volumétrica del mundo real.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
-                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Carga rápida bajo demanda.</li>
-                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> Acceso a través del navegador sin instalar software especializado.</li>
+                    <li><i class="bi bi-box-fill text-primary me-3"></i> <strong class="text-dark">Densidad:</strong> Cientos de puntos por metro cuadrado.</li>
+                    <li><i class="bi bi-crosshair text-danger me-3"></i> <strong class="text-dark">Precisión:</strong> Margen de error sub-centimétrico.</li>
+                    <li><i class="bi bi-file-earmark-zip-fill text-success me-3"></i> <strong class="text-dark">Formatos:</strong> Almacenados en archivos ultracomprimidos (.LAS, .LAZ).</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Slide 3: Navegación 3D -->
-    <section class="slide">
+    <!-- Slide 5: Escaneando la realidad -->
+    <section class="slide bg-white">
         <div class="row align-items-center">
-            <div class="col-lg-8">
-                <i class="bi bi-box-fill slide-icon text-qgis-yellow"></i>
-                <h2 class="slide-subtitle">Navegación e Inspección 3D</h2>
-                <p class="slide-text">Uso de herramientas de medición directa en la web operando sobre la nube de puntos nativa.</p>
-                <ul class="list-unstyled slide-list mt-4 font-mono">
-                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Distancias y alturas de estructuras.</li>
-                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Cálculo de áreas.</li>
-                    <li><i class="bi bi-check2-square text-qgis-yellow me-3"></i> Perfiles transversales y longitudinales rápidos en tiempo real.</li>
-                </ul>
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-dark text-center mb-4">¿Cómo escaneamos la realidad?</h2>
+                <p class="slide-text text-secondary text-center mb-5">Para llevar el mundo físico a la pantalla, utilizamos dos herramientas principales.</p>
+                <div class="row g-4 font-mono">
+                    <div class="col-md-6 text-center">
+                        <div class="p-4 bg-light border border-secondary shadow-sm rounded h-100">
+                            <i class="bi bi-broadcast text-danger display-4 mb-3 d-block"></i>
+                            <h4 class="text-dark">Tecnología Láser (LiDAR)</h4>
+                            <p class="text-secondary small mt-3">Dispara millones de haces de luz y mide su rebote.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="p-4 bg-light border border-secondary shadow-sm rounded h-100">
+                            <i class="bi bi-camera text-primary display-4 mb-3 d-block"></i>
+                            <h4 class="text-dark">Tecnología de Imagen (Fotogrametría)</h4>
+                            <p class="text-secondary small mt-3">Cruza información visual de cientos de fotografías superpuestas.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Slide 4: Ejercicio Práctico -->
-    <section class="slide">
+    <!-- Slide 6: LiDAR -->
+    <section class="slide bg-light">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-dark text-center mb-5">Método 1: LiDAR (El murciélago digital)</h2>
+                <p class="text-center text-dark font-mono mb-4">Funciona como la ecolocalización de un murciélago, pero usando pulsos de luz láser.</p>
+                <div class="d-flex justify-content-between flex-wrap text-center font-mono gap-3">
+                    <div class="bg-white p-3 rounded border-bottom border-4 border-danger shadow-sm" style="flex:1;">
+                        <h4 class="text-danger fw-bold">1. Emisión</h4>
+                        <p class="small text-secondary">Un sensor dispara millones de pulsos.</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-bottom border-4 border-warning shadow-sm" style="flex:1;">
+                        <h4 class="text-warning fw-bold">2. Rebote</h4>
+                        <p class="small text-secondary">La luz choca contra un objeto.</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-bottom border-4 border-info shadow-sm" style="flex:1;">
+                        <h4 class="text-info fw-bold">3. Cronómetro</h4>
+                        <p class="small text-secondary">Se mide el tiempo de ida y vuelta.</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-bottom border-4 border-success shadow-sm" style="flex:1;">
+                        <h4 class="text-success fw-bold">4. Cálculo</h4>
+                        <p class="small text-secondary">Se determina la distancia exacta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Fotogrametría -->
+    <section class="slide bg-white">
         <div class="row align-items-center">
             <div class="col-lg-10">
-                <i class="bi bi-vr slide-icon"></i>
-                <h2 class="slide-subtitle text-white">Ejercicio Práctico: Derecho de Vía</h2>
-                <p class="slide-text mt-3">Integración del entorno Web con SIG de escritorio.</p>
-                <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Acceso al visor Potree de un tramo carretero escaneado.</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Inspección visual de fallas e identificación del derecho de vía.</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Extracción de coordenadas de puntos críticos en Potree.</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Descarga de un subconjunto vectorizado para integración en QGIS.</li>
-                </ul>
+                <i class="bi bi-camera-fill slide-icon text-primary"></i>
+                <h2 class="slide-subtitle text-dark">Método 2: Fotogrametría (El detective 3D)</h2>
+                <p class="slide-text text-dark">Reconstruye el espacio engañando a las imágenes planas.</p>
+                <div class="mt-4 p-4 border-start border-4 border-primary bg-light shadow-sm rounded font-mono">
+                    <ul class="text-dark fs-5 list-unstyled mb-0">
+                        <li class="mb-3"><i class="bi bi-arrow-right-short text-primary me-2 fs-4"></i> Captura cientos de fotografías 2D superpuestas desde distintos ángulos.</li>
+                        <li class="mb-3"><i class="bi bi-arrow-right-short text-primary me-2 fs-4"></i> Busca píxeles idénticos (puntos homólogos) en múltiples fotos.</li>
+                        <li class="mb-3"><i class="bi bi-arrow-right-short text-primary me-2 fs-4"></i> Mediante triangulación, calcula la profundidad geométrica.</li>
+                        <li><i class="bi bi-arrow-right-short text-primary me-2 fs-4"></i> Genera una nube de puntos con color fotográfico real (RGB).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Navegación Inercial -->
+    <section class="slide bg-light">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-dark text-center mb-5">El ancla invisible: La navegación inercial</h2>
+                <div class="alert alert-warning bg-white border-warning text-dark font-mono text-center mb-5 shadow-sm fs-5">
+                    <strong>¿Si un dron en movimiento toma medidas, cómo sabe exactamente dónde estaba en ese milisegundo?</strong>
+                </div>
+                <div class="row font-mono g-4">
+                    <div class="col-md-6">
+                        <div class="p-4 bg-white border border-secondary shadow-sm h-100 rounded">
+                            <h4 class="text-dark text-center border-bottom pb-2">Sistemas INS / GNSS</h4>
+                            <p class="text-secondary small mt-3 text-justify">Combinan giroscopios, acelerómetros y GPS satelital. Actúan como el 'oído interno' del escáner, registrando cada inclinación (pitch, roll, yaw), aceleración y giro.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-white border border-secondary shadow-sm h-100 rounded">
+                            <h4 class="text-dark text-center border-bottom pb-2">Georreferenciación Vital</h4>
+                            <p class="text-secondary small mt-3 text-justify">Sin esta sincronización hiper-precisa, los millones de puntos capturados serían un caos flotante en lugar de un mapa coherente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Duelo Tecnológico -->
+    <section class="slide bg-white">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-dark text-center mb-4">El Duelo Tecnológico: ¿Cuál elegir?</h2>
+                <div class="table-responsive font-mono shadow-sm">
+                    <table class="table table-light table-striped table-bordered border-secondary text-center align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Criterio</th>
+                                <th>Escáner Láser (LiDAR)</th>
+                                <th>Fotogrametría</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-dark">
+                            <tr>
+                                <td>Precisión Geométrica</td>
+                                <td class="text-success fw-bold">Extrema (Milimétrica)</td>
+                                <td class="text-primary fw-bold">Alta (Centimétrica)</td>
+                            </tr>
+                            <tr>
+                                <td>Información de Color</td>
+                                <td class="text-danger fw-bold">Limitada (intensidad)</td>
+                                <td class="text-success fw-bold">Perfecta (Fotorrealista RGB)</td>
+                            </tr>
+                            <tr>
+                                <td>Condiciones de Luz</td>
+                                <td class="text-success fw-bold">Funciona en oscuridad total</td>
+                                <td class="text-danger fw-bold">Requiere excelente iluminación</td>
+                            </tr>
+                            <tr>
+                                <td>Penetración</td>
+                                <td class="text-success fw-bold">Ve el suelo a través de los árboles</td>
+                                <td class="text-danger fw-bold">Solo captura la superficie visible</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Fase 1 Filtrado -->
+    <section class="slide bg-light">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <i class="bi bi-funnel-fill slide-icon text-danger"></i>
+                <h2 class="slide-subtitle text-dark">Procesamiento Fase 1: El colador digital</h2>
+                <p class="slide-text text-dark">Los datos crudos son ruidosos. El software especializado debe limpiarlos y estructurarlos.</p>
+                <div class="mt-4 font-mono">
+                    <div class="p-3 bg-white border border-secondary shadow-sm rounded mb-3">
+                        <strong class="text-danger">1. Filtrado de Ruido:</strong> Eliminación de anomalías o puntos basura (pájaros, cables moviéndose) que no pertenecen a la estructura.
+                    </div>
+                    <div class="p-3 bg-white border border-secondary shadow-sm rounded mb-3">
+                        <strong class="text-warning">2. Plano de Referencia:</strong> Establecimiento del nivel del suelo base para cálculos precisos.
+                    </div>
+                    <div class="p-3 bg-white border border-secondary shadow-sm rounded">
+                        <strong class="text-success">3. Normalización:</strong> Ajuste de la escala de elevación para encajar perfectamente en el mapa del mundo real.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 11: Fase 2 Clasificación -->
+    <section class="slide bg-white">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-tags-fill slide-icon text-success d-block text-center mb-3"></i>
+                <h2 class="slide-subtitle text-dark text-center mb-4">Procesamiento Fase 2: Puntos inteligentes</h2>
+                <p class="slide-text text-dark text-center w-75 mx-auto mb-5">No basta con capturar la forma; la computadora necesita saber qué está viendo. Mediante algoritmos, se clasifica cada punto dándole una categoría.</p>
+                <div class="row justify-content-center font-mono">
+                    <div class="col-md-8">
+                        <div class="card border-success shadow-sm bg-light">
+                            <div class="card-header bg-success text-white fw-bold">
+                                Sistema de Clasificación (Legend)
+                            </div>
+                            <ul class="list-group list-group-flush text-dark">
+                                <li class="list-group-item bg-light"><i class="bi bi-circle-fill text-warning me-3"></i> Clase 2: Terreno (Suelo desnudo)</li>
+                                <li class="list-group-item bg-light"><i class="bi bi-circle-fill text-success me-3"></i> Clase 5: Vegetación</li>
+                                <li class="list-group-item bg-light"><i class="bi bi-circle-fill text-primary me-3"></i> Clase 6: Edificaciones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 12: Fase 3 Meshing -->
+    <section class="slide bg-light">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-dark text-center mb-5">Procesamiento Fase 3: Conectando los puntos (Meshing)</h2>
+                <p class="slide-text text-dark text-center mb-4">Para crear un modelo utilizable, se conectan los puntos cercanos creando millones de triángulos para formar una 'piel' digital sólida.</p>
+                <div class="row g-4 font-mono text-center">
+                    <div class="col-md-4">
+                        <div class="p-3 bg-white border border-secondary shadow-sm rounded h-100">
+                            <h5 class="text-danger border-bottom pb-2">1. Nube Cruda</h5>
+                            <p class="small text-secondary mt-2">Puntos flotantes individuales. Visualización ligera pero no volumétrica.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 bg-white border border-secondary shadow-sm rounded h-100">
+                            <h5 class="text-warning border-bottom pb-2">2. Malla (Wireframe)</h5>
+                            <p class="small text-secondary mt-2">Red de triángulos interconectados (TIN). Base de la geometría.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 bg-white border border-secondary shadow-sm rounded h-100">
+                            <h5 class="text-success border-bottom pb-2">3. Modelo Sólido</h5>
+                            <p class="small text-secondary mt-2">Superficies renderizadas con texturas, sombras y luces realistas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 13: Aplicaciones HBIM -->
+    <section class="slide bg-white">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-bank slide-icon text-primary d-block text-center mb-3"></i>
+                <h2 class="slide-subtitle text-dark text-center mb-5">Aplicaciones: Memoria inalterable</h2>
+                <div class="row g-4 font-mono">
+                    <div class="col-md-6">
+                        <div class="p-4 bg-light border-start border-4 border-danger shadow-sm h-100 rounded">
+                            <h4 class="text-dark">Preservación del Patrimonio (HBIM)</h4>
+                            <p class="text-secondary small mt-3">Las nubes de puntos funcionan como copias de seguridad infalibles de la realidad. Ejemplo: Reconstrucción milimétrica de Notre Dame tras el incendio.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-light border-start border-4 border-info shadow-sm h-100 rounded">
+                            <h4 class="text-dark">Arqueología Digital</h4>
+                            <p class="text-secondary small mt-3">Permite a los museos catalogar, medir y estudiar artefactos frágiles o ruinas milenarias sin necesidad de contacto físico destructivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 14: Aplicaciones Naturaleza/BIM -->
+    <section class="slide bg-light">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-dark text-center mb-5">Aplicaciones: Naturaleza y Urbanismo</h2>
+                <div class="row g-4 font-mono">
+                    <div class="col-md-6">
+                        <div class="p-4 bg-white border border-success shadow-sm h-100 rounded">
+                            <i class="bi bi-tree text-success display-4 mb-3 d-block text-center"></i>
+                            <h4 class="text-dark text-center">Cuidado Forestal</h4>
+                            <p class="text-secondary small mt-3 text-justify">El chequeo médico del bosque. Permite medir el volumen de madera, monitorear la salud de las plantas y planificar reforestaciones viendo a través del follaje (gracias a LiDAR) hasta el suelo desnudo.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-white border border-warning shadow-sm h-100 rounded">
+                            <i class="bi bi-building text-warning display-4 mb-3 d-block text-center"></i>
+                            <h4 class="text-dark text-center">Construcción y BIM</h4>
+                            <p class="text-secondary small mt-3 text-justify">La lupa de la ciudad. Se compara el diseño original computarizado con escaneos semanales de la obra real para detectar desviaciones de milímetros (clash detection) antes de que cuesten dinero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 15: Conclusión -->
+    <section class="slide bg-white text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-hourglass-split slide-icon text-primary" style="font-size: 5rem;"></i>
+                <h2 class="slide-subtitle text-dark mt-4">El mundo físico, clonado.</h2>
+                <div class="mt-5 p-4 bg-light border border-secondary shadow-sm rounded d-inline-block font-mono text-dark w-75 mx-auto text-center fs-5">
+                    Las nubes de puntos no son solo imágenes; son datos con profundidad y contexto.<br><br>Representan el salto definitivo de medir el mundo con cintas métricas a clonarlo digitalmente. Ya sea para prevenir desastres naturales, restaurar ruinas o construir ciudades inteligentes, el futuro comienza capturando la realidad, un punto a la vez.
+                </div>
             </div>
         </div>
     </section>
