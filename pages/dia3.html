@@ -27,7 +27,375 @@
         </div>
     </section>
 
-    <!-- Slide 1.1: El Paradigma GNSS -->
+    <!-- Slide 1.1: Guía Operativa NUWA -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Guía Operativa NUWA 2.4.7.0</h2>
+                <div class="row g-4 font-mono">
+                    <div class="col-md-6">
+                        <div class="p-4 bg-dark border-start border-4 border-success h-100">
+                            <h4 class="text-white"><i class="bi bi-broadcast text-success me-2"></i>Estado del Receptor</h4>
+                            <ul class="text-muted-light small list-unstyled mt-3">
+                                <li class="mb-2"><strong>ID:</strong> TERSUS-GNSS-765</li>
+                                <li class="mb-2"><strong>MODO:</strong> RTK MÓVIL [FIXED]</li>
+                                <li class="mb-2"><strong>SATÉLITES:</strong> 24 [GPS, GLO, GAL, BDS]</li>
+                                <li><strong>PRECISIÓN:</strong> H: 0.008m / V: 0.012m</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-dark border-start border-4 border-qgis h-100">
+                            <h4 class="text-white"><i class="bi bi-folder-fill text-qgis-yellow me-2"></i>Configuración de Proyecto</h4>
+                            <ul class="text-muted-light small list-unstyled mt-3">
+                                <li class="mb-2"><strong>PROYECTO:</strong> SOP_UTM15N</li>
+                                <li class="mb-2"><strong>SISTEMA:</strong> WGS84 / UTM ZONA 15N</li>
+                                <li class="mb-2"><strong>UNIDADES:</strong> Metros</li>
+                                <li><strong>GEOIDE:</strong> EGM2008</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.2: Flujo de Trabajo en Campo -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-diagram-3 slide-icon text-warning d-block text-center mb-3"></i>
+                <h2 class="slide-subtitle text-center mb-5">El Flujo de Trabajo en Campo</h2>
+                <div class="d-flex justify-content-between flex-wrap text-center font-mono text-white gap-3">
+                    <div class="bg-dark p-3 rounded border-bottom border-4 border-danger" style="flex:1;">
+                        <h1 class="display-5 fw-bold text-danger">1</h1>
+                        <h5>Preparación</h5>
+                        <p class="small text-muted-light">Ajustes globales y proyecto.</p>
+                    </div>
+                    <div class="bg-dark p-3 rounded border-bottom border-4 border-warning" style="flex:1;">
+                        <h1 class="display-5 fw-bold text-warning">2</h1>
+                        <h5>Referencia</h5>
+                        <p class="small text-muted-light">Sistema de coordenadas.</p>
+                    </div>
+                    <div class="bg-dark p-3 rounded border-bottom border-4 border-success" style="flex:1;">
+                        <h1 class="display-5 fw-bold text-success">3</h1>
+                        <h5>Enlace RTK</h5>
+                        <p class="small text-muted-light">Configuración Base y Rover.</p>
+                    </div>
+                    <div class="bg-dark p-3 rounded border-bottom border-4 border-qgis" style="flex:1;">
+                        <h1 class="display-5 fw-bold text-qgis-yellow">4</h1>
+                        <h5>Captura</h5>
+                        <p class="small text-muted-light">Toma de puntos estáticos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.3: Ajustes Globales NUWA -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-4">Ajustes Globales de la Interfaz</h2>
+                <div class="row g-4 font-mono">
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border border-secondary rounded h-100 text-center">
+                            <i class="bi bi-rulers text-qgis-yellow display-4 mb-3 d-block"></i>
+                            <h5 class="text-white">Unidades y Formatos</h5>
+                            <p class="text-muted-light small mt-3">Sistema métrico estándar y formatos de grados sexagesimales activados.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border border-secondary rounded h-100 text-center">
+                            <i class="bi bi-bluetooth text-primary display-4 mb-3 d-block"></i>
+                            <h5 class="text-white">Conexión</h5>
+                            <p class="text-muted-light small mt-3">Módulo Bluetooth vinculado al número de serie del receptor Tersus.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border border-secondary rounded h-100 text-center">
+                            <i class="bi bi-volume-up text-success display-4 mb-3 d-block"></i>
+                            <h5 class="text-white">Interfaz de Usuario</h5>
+                            <p class="text-muted-light small mt-3">Alertas sonoras de pérdida de señal (Fixed/Float) y confirmación auditiva.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.4: Arquitectura de Propiedades -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-layers slide-icon text-qgis-light"></i>
+                <h2 class="slide-subtitle">Arquitectura del Proyecto</h2>
+                <p class="slide-text">Las tres capas fundamentales para definir la posición.</p>
+                <ul class="list-unstyled slide-list mt-4 font-mono">
+                    <li><i class="bi bi-circle-fill text-success me-3"></i> <strong>Ajustes de Plano (Local):</strong> Correcciones topográficas locales o calibraciones de sitio específicas.</li>
+                    <li><i class="bi bi-circle-fill text-info me-3"></i> <strong>Transformación Datum/Geoide:</strong> Ajustes de altura ortométrica y ondulación geoidal.</li>
+                    <li><i class="bi bi-circle-fill text-secondary me-3"></i> <strong>Elipsoide Base:</strong> El modelo matemático fundamental de la Tierra (Ej. WGS84).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.5: Creación de Sistemas -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-plus-square-dotted slide-icon text-warning"></i>
+                <h2 class="slide-subtitle">Creación de Sistemas de Coordenadas</h2>
+                <div class="mt-4 p-4 border border-secondary bg-darker rounded font-mono">
+                    <h5 class="text-white mb-3">Ruta en NUWA: <span class="text-warning">Proyecto > Sistemas > Nuevo</span></h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="text-muted-light small list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Nombre</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Elipsoide</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Proyección</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Datum</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Ajuste de Altura</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="alert alert-danger bg-dark border-danger text-danger w-100 mb-0">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>El sistema dicta la precisión absoluta. Un error invalida los datos recolectados.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.6: Caso Aplicado UTM -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Caso Aplicado: UTM Zona 15 Norte</h2>
+                <div class="card bg-darker border-qgis p-4 font-mono">
+                    <div class="row">
+                        <div class="col-md-6 border-end border-secondary">
+                            <ul class="text-light fs-5 list-unstyled mb-0">
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Elipsoide:</strong> <span class="text-success">WGS84</span></li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Proyección:</strong> Transverse Mercator (TM)</li>
+                                <li class="mb-3"><strong>Falso Este:</strong> <span class="text-warning">500000.000 m</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 ps-4">
+                            <ul class="text-light fs-5 list-unstyled mb-0">
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Falso Norte:</strong> 0.000 m (Hemisferio Norte)</li>
+                                <li class="mb-3 border-bottom border-secondary pb-2"><strong>Meridiano Central:</strong> <span class="text-success">-93.000000°</span></li>
+                                <li class="mb-3"><strong>Factor de Escala:</strong> 0.9996</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.7: Arquitectura RTK -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-broadcast-pin slide-icon text-danger"></i>
+                <h2 class="slide-subtitle">Arquitectura RTK (Radio Interno)</h2>
+                <p class="slide-text">Transmisión de correcciones (Tx) desde la Base hacia la Recepción (Rx) en el Rover para lograr Solución Fija.</p>
+                <div class="mt-4 p-4 border border-warning bg-darker rounded font-mono text-warning">
+                    <i class="bi bi-shield-check me-2"></i>El modo Radio Interno (UHF) garantiza <strong>autonomía total en campo</strong>. La Base y el Rover se comunican directamente sin depender de redes celulares o NTRIP.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.8: Perfil BASE -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Configuración del Perfil BASE</h2>
+                <div class="row g-4 font-mono">
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border-start border-4 border-warning h-100">
+                            <h4 class="text-white">1. Enlace</h4>
+                            <p class="text-muted-light small mt-3">Modo: Radio Interno<br>Rol: <strong>Transmisión (Tx)</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border-start border-4 border-success h-100">
+                            <h4 class="text-white">2. Frecuencia</h4>
+                            <ul class="text-muted-light small mt-3 list-unstyled">
+                                <li><strong>Canal:</strong> 1 (460.050 MHz)</li>
+                                <li><strong>Baudios:</strong> 9600</li>
+                                <li><strong>Protocolo:</strong> TrimTalk 450s</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border-start border-4 border-info h-100">
+                            <h4 class="text-white">3. Partida</h4>
+                            <p class="text-muted-light small mt-3">Punto Conocido (preciso) vs Modo Autónomo (promedio relativo).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.9: Perfil ROVER -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-gear-wide-connected slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Configuración del Perfil ROVER</h2>
+                <p class="slide-text">Selección de Radio Interno configurado en modo <strong>Recepción (Rx)</strong>.</p>
+                <div class="mt-4 p-4 border-start border-4 border-warning bg-darker rounded font-mono">
+                    <h4 class="text-warning mb-3">REGLA DE ORO DEL ENLACE RTK</h4>
+                    <ul class="text-white fs-5 list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-3"></i>1. Mismo Canal / Frecuencia (460.050 MHz)</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-3"></i>2. Mismo Protocolo de Radio (TrimTalk 450s)</li>
+                        <li><i class="bi bi-check-circle-fill text-warning me-3"></i>3. Misma Tasa de Baudios (9600)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.10: Matriz Operativa -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-4">Matriz Operativa: Base vs. Rover</h2>
+                <div class="table-responsive font-mono">
+                    <table class="table table-dark table-striped table-bordered border-secondary text-center align-middle">
+                        <thead>
+                            <tr class="text-qgis-yellow">
+                                <th>Parámetro</th>
+                                <th>Configuración BASE</th>
+                                <th>Configuración ROVER</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-light">
+                            <tr><td>Rol Principal</td><td class="text-warning">Referencia Estática</td><td class="text-info">Captura Móvil</td></tr>
+                            <tr><td>Estado de Radio</td><td>Transmisor (Tx)</td><td>Receptor (Rx)</td></tr>
+                            <tr><td>Posición Inicial</td><td>Punto Conocido / Autónomo</td><td>Dinámica (Calculada)</td></tr>
+                            <tr><td>Diferencial</td><td>Emisión RTCM</td><td>Recepción RTCM</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.11: Restricciones RTK -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Restricciones y Control de Calidad (RTK)</h2>
+                <div class="row g-4 font-mono text-center">
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border border-secondary rounded h-100">
+                            <i class="bi bi-shield-lock text-danger display-4 mb-3 d-block"></i>
+                            <h5 class="text-white">Tolerancia Solución</h5>
+                            <p class="text-warning fs-5 fw-bold mb-2">FIJO (Fixed)</p>
+                            <p class="text-muted-light small">Bloquea captura si el equipo está en Flotante o Autónomo.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border border-secondary rounded h-100">
+                            <i class="bi bi-graph-up text-success display-4 mb-3 d-block"></i>
+                            <h5 class="text-white">Promedio de Épocas</h5>
+                            <p class="text-success fs-5 fw-bold mb-2">3 a 5 épocas</p>
+                            <p class="text-muted-light small">Suaviza anomalías satelitales al promediar lecturas múltiples.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-dark border border-secondary rounded h-100">
+                            <i class="bi bi-bullseye text-info display-4 mb-3 d-block"></i>
+                            <h5 class="text-white">Límite RMS (H/V)</h5>
+                            <p class="text-info fs-5 fw-bold mb-2">H: 0.015m, V: 0.020m</p>
+                            <p class="text-muted-light small">Establece tolerancias estrictas de error cuadrático medio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.12: Metodología Precisión -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-bar-chart-steps slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Metodología de Precisión: Punto Estático</h2>
+                <p class="slide-text">Configuración de Post-Proceso para alcanzar máxima densidad de datos.</p>
+                <div class="mt-4 p-4 border border-secondary bg-darker rounded font-mono">
+                    <ul class="text-muted-light fs-5 list-unstyled mb-0">
+                        <li class="mb-3 border-bottom border-secondary pb-2"><i class="bi bi-database text-success me-2"></i><strong>Grabación de Datos Crudos (Raw Data):</strong> Activado</li>
+                        <li class="mb-3 border-bottom border-secondary pb-2"><i class="bi bi-clock text-warning me-2"></i><strong>Intervalo de Grabación:</strong> 1s (alta densidad) o 5s (larga duración)</li>
+                        <li class="mb-3 border-bottom border-secondary pb-2"><i class="bi bi-funnel text-danger me-2"></i><strong>Máscara de Elevación:</strong> 10° a 15° (Descarta ruido atmosférico)</li>
+                        <li><i class="bi bi-arrows-collapse-vertical text-info me-2"></i><strong>Altura de Antena:</strong> Ingreso manual meticuloso al centro de fase</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.13: COGO -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Herramientas COGO: Obstrucciones en Campo</h2>
+                <div class="row g-4 font-mono">
+                    <div class="col-md-6">
+                        <div class="p-4 bg-dark border-start border-4 border-warning h-100">
+                            <h4 class="text-white"><i class="bi bi-signpost-split me-2 text-warning"></i>Desplazamiento / Offsets</h4>
+                            <p class="text-muted-light small mt-3">Cálculo de un punto inaccesible (ej. bajo un árbol) aplicando un offset (Azimut + Distancia) desde una coordenada conocida.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-dark border-start border-4 border-info h-100">
+                            <h4 class="text-white"><i class="bi bi-intersect me-2 text-info"></i>Intersección</h4>
+                            <p class="text-muted-light small mt-3">Determinación de un tercer punto oculto mediante la intersección matemática de dos radios o ángulos conocidos.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="alert alert-info bg-darker border-info text-info mb-0 text-center">
+                            Utilice el menú de utilidades de NUWA para calcular posiciones inaccesibles sin perder la inicialización RTK.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.14: Checklist -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="slide-subtitle text-center mb-5">Lista de Verificación Pre-Levantamiento</h2>
+                <div class="row font-mono g-3">
+                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>1. Sistema:</strong> Coordenadas y Proyección confirmadas.</div></div>
+                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>2. Hardware:</strong> Altura de jalón ingresada correctamente.</div></div>
+                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>3. Físico:</strong> Burbuja de nivelación perfectamente centrada.</div></div>
+                    <div class="col-md-6"><div class="p-3 bg-dark border-start border-4 border-success h-100"><strong>4. Enlace:</strong> Icono de Radio Rx parpadeando.</div></div>
+                    <div class="col-md-12"><div class="p-3 bg-dark border-start border-4 border-success h-100 text-center"><strong>5. Precisión:</strong> Estado "FIJO" con RMS dentro de tolerancia.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 1.15: Precisión Asegurada -->
+    <section class="slide text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-check-circle-fill slide-icon text-success" style="font-size: 5rem;"></i>
+                <h2 class="slide-subtitle mt-4">Precisión Milimétrica Asegurada</h2>
+                <p class="slide-text w-75 mx-auto mt-4">El dominio del flujo de trabajo secuencial en NUWA garantiza operaciones de campo consistentes, autónomas y de alta precisión.<br><br>El equipo Tersus está listo para operar.</p>
+            </div>
+        </div>
+    </section>
     <section class="slide">
         <div class="row align-items-center">
             <div class="col-lg-12">
