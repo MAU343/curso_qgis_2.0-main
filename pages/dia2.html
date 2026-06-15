@@ -374,6 +374,41 @@
         </div>
     </section>
 
+    <!-- Slide 3.3: Cálculo de Vértices desde el Norte -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <i class="bi bi-geo-alt slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Cálculo de Vértices (Inicio al Norte)</h2>
+                <div class="mt-4 p-4 border-left-qgis bg-darker rounded font-mono">
+                    <h5 class="text-white mb-2"><i class="bi bi-info-circle-fill text-qgis-light me-2"></i>Propósito del Código</h5>
+                    <p class="text-muted-light small mb-0">Esta expresión permite reordenar el identificador de los vértices (ID) para que la secuencia comience desde el vértice ubicado más al norte (mayor coordenada Y) y continúe de forma correlativa.</p>
+                </div>
+
+                <h5 class="text-white font-mono mt-4">Expresión para la Calculadora</h5>
+                <div class="code-container bg-dark border border-secondary rounded p-3 position-relative overflow-auto" style="max-height: 250px;">
+                    <pre><code class="text-qgis-yellow font-mono small">with_variable('max_y',
+    aggregate(layer:=@layer, aggregate:='max', expression:=round(y($geometry), 4)),
+    with_variable('id_norte',
+        aggregate(layer:=@layer, aggregate:='min', expression:=$id, filter:=round(y($geometry), 4) = @max_y),
+        with_variable('total_puntos',
+            aggregate(layer:=@layer, aggregate:='count', expression:=$id),
+            
+            to_int(
+                if(
+                    $id >= @id_norte,
+                    $id - @id_norte + 1,
+                    $id - @id_norte + 1 + @total_puntos
+                )
+            )
+        )
+    )
+)</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Slide 4: Ejercicio Práctico -->
     <section class="slide">
         <div class="row align-items-center">
