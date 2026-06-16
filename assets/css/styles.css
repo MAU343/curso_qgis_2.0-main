@@ -602,3 +602,28 @@ html.presentation-mode {
     color: #fff;
     border-color: #dc3545;
 }
+
+/* Star Rating Styles */
+.star-rating {
+    display: flex;
+    gap: 0.4rem;
+    direction: row;
+    padding: 0.5rem 0;
+}
+
+.star-btn {
+    color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.15s ease;
+    line-height: 1;
+    user-select: none;
+}
+
+.star-btn.active {
+    color: #FEE028;
+}
+
+.star-btn:hover {
+    transform: scale(1.2);
+    color: #FEE028;
+}

@@ -317,11 +317,25 @@
                     <div id="alreadyCommented" class="d-none">
                         <div class="already-commented-box">
                             <i class="bi bi-check-circle-fill"></i>
+                            <div id="previousRating" class="mt-2 mb-2"></div>
                             <p class="text-muted-light font-mono mt-2 mb-0">Ya enviaste tu comentario para este dia. Gracias por tu retroalimentacion.</p>
                         </div>
                     </div>
                     <div id="commentFormWrapper">
                         <form id="commentForm">
+                            <div class="mb-3">
+                                <label class="form-label font-mono small text-qgis-yellow">
+                                    <i class="bi bi-star-fill me-1"></i>Valoracion de la clase
+                                </label>
+                                <div class="star-rating" id="starRating">
+                                    <i class="bi bi-star fs-3 star-btn" data-value="1"></i>
+                                    <i class="bi bi-star fs-3 star-btn" data-value="2"></i>
+                                    <i class="bi bi-star fs-3 star-btn" data-value="3"></i>
+                                    <i class="bi bi-star fs-3 star-btn" data-value="4"></i>
+                                    <i class="bi bi-star fs-3 star-btn" data-value="5"></i>
+                                </div>
+                                <input type="hidden" id="ratingValue" name="rating" value="0">
+                            </div>
                             <div class="mb-3">
                                 <label for="commentContent" class="form-label font-mono small text-qgis-yellow">
                                     <i class="bi bi-pencil-fill me-1"></i>Tu comentario sobre la clase de hoy

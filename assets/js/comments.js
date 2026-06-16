@@ -18,12 +18,18 @@ function setComentariosCookie(data) {
 
 function yaComento(dia) {
   const cookie = getComentariosCookie();
-  return cookie[dia] === true;
+  return cookie[dia] !== undefined;
 }
 
-function marcarComentado(dia) {
+function getRatingCookie(dia) {
   const cookie = getComentariosCookie();
-  cookie[dia] = true;
+  const val = cookie[dia];
+  return typeof val === 'number' ? val : 0;
+}
+
+function marcarComentado(dia, rating) {
+  const cookie = getComentariosCookie();
+  cookie[dia] = rating;
   setComentariosCookie(cookie);
 }
 
@@ -38,13 +44,64 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('commentSubmitBtn');
   const submitStatus = document.getElementById('commentSubmitStatus');
   const modalDiaLabel = document.getElementById('commentModalDiaLabel');
+  const starRating = document.getElementById('starRating');
+  const ratingValueInput = document.getElementById('ratingValue');
+  const previousRating = document.getElementById('previousRating');
 
   let currentDia = null;
+
+  function updateStars(value) {
+    const stars = starRating.querySelectorAll('.star-btn');
+    stars.forEach((star) => {
+      const starVal = parseInt(star.getAttribute('data-value'), 10);
+      star.classList.toggle('active', starVal <= value);
+    });
+  }
+
+  function resetRating() {
+    ratingValueInput.value = 0;
+    updateStars(0);
+  }
+
+  function showPreviousRating(dia) {
+    const rating = getRatingCookie(dia);
+    if (!rating) {
+      previousRating.innerHTML = '';
+      return;
+    }
+    let starsHtml = '';
+    for (let i = 1; i <= 5; i++) {
+      starsHtml += i <= rating
+        ? '<i class="bi bi-star-fill fs-5 mx-1" style="color:#FEE028"></i>'
+        : '<i class="bi bi-star fs-5 mx-1" style="color:rgba(255,255,255,0.15)"></i>';
+    }
+    previousRating.innerHTML = '<div class="font-mono small text-qgis-yellow mb-1">Tu valoracion:</div>' + starsHtml;
+  }
+
+  starRating.addEventListener('click', (e) => {
+    const star = e.target.closest('.star-btn');
+    if (!star) return;
+    const value = parseInt(star.getAttribute('data-value'), 10);
+    ratingValueInput.value = value;
+    updateStars(value);
+  });
+
+  starRating.addEventListener('mouseover', (e) => {
+    const star = e.target.closest('.star-btn');
+    if (!star) return;
+    const value = parseInt(star.getAttribute('data-value'), 10);
+    updateStars(value);
+  });
+
+  starRating.addEventListener('mouseleave', () => {
+    updateStars(parseInt(ratingValueInput.value, 10) || 0);
+  });
 
   function actualizarEstadoUI() {
     if (yaComento(currentDia)) {
       formWrapper.classList.add('d-none');
       alreadyWrapper.classList.remove('d-none');
+      showPreviousRating(currentDia);
     } else {
       formWrapper.classList.remove('d-none');
       alreadyWrapper.classList.add('d-none');
@@ -59,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalDiaLabel.textContent = 'Dia ' + currentDia;
     form.reset();
+    resetRating();
     submitStatus.classList.add('d-none');
     actualizarEstadoUI();
   });
@@ -66,7 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const content = contentField.value.trim();
-    if (!content || !currentDia) return;
+    const rating = parseInt(ratingValueInput.value, 10);
+    if (!rating || !content || !currentDia) return;
 
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i> ENVIANDO...';
@@ -76,17 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const res = await fetch(COMMENTS_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ dia: currentDia, content })
+        body: JSON.stringify({ dia: currentDia, content, rating })
       });
 
       if (!res.ok) throw new Error();
 
-      marcarComentado(currentDia);
+      marcarComentado(currentDia, rating);
       form.reset();
+      resetRating();
       actualizarEstadoUI();
 
       submitStatus.className = 'alert alert-success rounded-0 border-0 font-mono small mt-3 animate-fade-in';
-      submitStatus.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> Comentario enviado correctamente.';
+      submitStatus.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> Comentario y valoracion enviados correctamente.';
       submitStatus.classList.remove('d-none');
       setTimeout(() => submitStatus.classList.add('d-none'), 4000);
     } catch {
