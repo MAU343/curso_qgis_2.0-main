@@ -111,7 +111,7 @@ async function cargarRegistros() {
                     <td>${r.email}</td>
                     <td>${r.telefono || '-'}</td>
                     <td>${r.profesion}</td>
-                    <td class="text-muted">${new Date(r.created_at).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}</td>
+                    <td class="text-muted" style="color: #ffffff !important;">${new Date(r.created_at).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}</td>
                 </tr>
             `).join('');
 
@@ -225,7 +225,7 @@ async function cargarComentariosAdmin() {
                             <tr>
                                 <td class="text-muted">${i + 1}</td>
                                 <td class="comment-content-cell text-light">${escapeHtml(c.content)}</td>
-                                <td class="text-muted">${formatearFecha(c.created_at)}</td>
+                                <td class="text-muted" style="color: #ffffff !important;">${formatearFecha(c.created_at)}</td>
                                 <td>
                                     <button class="btn-delete-comment font-mono small" onclick="eliminarComentario(${c.id})">
                                         <i class="bi bi-trash3"></i>
