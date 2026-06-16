@@ -209,6 +209,17 @@ async function cargarComentariosAdmin() {
             return;
         }
 
+        function renderStars(rating) {
+            if (!rating || rating < 1 || rating > 5) return '<span class="text-muted">-</span>';
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                html += i <= rating
+                    ? '<i class="bi bi-star-fill" style="color:#FEE028;font-size:0.75rem;margin-right:1px"></i>'
+                    : '<i class="bi bi-star" style="color:rgba(255,255,255,0.15);font-size:0.75rem;margin-right:1px"></i>';
+            }
+            return html;
+        }
+
         container.innerHTML = `
             <div class="table-responsive">
                 <table class="table table-dark table-bordered border-secondary admin-comments-table mb-0">
@@ -216,6 +227,7 @@ async function cargarComentariosAdmin() {
                         <tr>
                             <th style="width:50px;">#</th>
                             <th>Comentario</th>
+                            <th style="width:140px;">Valoracion</th>
                             <th style="width:180px;">Fecha</th>
                             <th style="width:80px;">Accion</th>
                         </tr>
@@ -225,6 +237,7 @@ async function cargarComentariosAdmin() {
                             <tr>
                                 <td class="text-muted">${i + 1}</td>
                                 <td class="comment-content-cell text-light">${escapeHtml(c.content)}</td>
+                                <td class="font-mono small" style="white-space:nowrap;">${renderStars(c.rating)}</td>
                                 <td class="text-muted" style="color: #ffffff !important;">${formatearFecha(c.created_at)}</td>
                                 <td>
                                     <button class="btn-delete-comment font-mono small" onclick="eliminarComentario(${c.id})">
