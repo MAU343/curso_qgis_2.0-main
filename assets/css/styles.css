@@ -466,3 +466,164 @@ html.presentation-mode {
     .slide-text, .slide-list { font-size: 1rem; }
     .req-card { margin-bottom: 1rem; }
 }
+
+/* Comment Modal Styles */
+.comment-modal-content {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+}
+
+.comment-modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+}
+
+.comment-modal-header .btn-close {
+    filter: invert(1) brightness(0.8);
+}
+
+.comment-modal-body {
+    padding: 1.5rem;
+}
+
+.comment-textarea {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    border-radius: 0;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-textarea:focus {
+    background-color: rgba(255, 255, 255, 0.02);
+    color: var(--text-main);
+    border-color: var(--qgis-light);
+    box-shadow: 0 0 0 0.25rem rgba(147, 192, 56, 0.25);
+    outline: none;
+}
+
+.comment-textarea::placeholder {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.comment-card {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--qgis-light);
+    border-radius: 0;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.comment-card-text {
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.comment-card-date {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+}
+
+.already-commented-box {
+    text-align: center;
+    padding: 2rem;
+    border: 1px dashed var(--qgis-light);
+    border-radius: 0;
+}
+
+.already-commented-box i {
+    font-size: 3rem;
+    color: var(--qgis-light);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.already-commented-box p {
+    font-family: var(--font-mono);
+    color: var(--text-muted-light);
+    margin-bottom: 0;
+}
+
+#commentsList {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+#commentsList::-webkit-scrollbar {
+    width: 6px;
+}
+
+#commentsList::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+#commentsList::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+#commentsList::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Admin comments section */
+.admin-comments-table td {
+    vertical-align: middle;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.admin-comments-table .comment-content-cell {
+    max-width: 400px;
+    word-wrap: break-word;
+}
+
+.btn-delete-comment {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #dc3545;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.btn-delete-comment:hover {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+/* Star Rating Styles */
+.star-rating {
+    display: flex;
+    gap: 0.4rem;
+    direction: row;
+    padding: 0.5rem 0;
+}
+
+.star-btn {
+    color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.15s ease;
+    line-height: 1;
+    user-select: none;
+}
+
+.star-btn.active {
+    color: #FEE028;
+}
+
+.star-btn:hover {
+    transform: scale(1.2);
+    color: #FEE028;
+}
