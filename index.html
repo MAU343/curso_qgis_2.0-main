@@ -36,6 +36,7 @@
                     <li class="nav-item"><a class="nav-link" href="#detalles">Detalles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#requisitos">Requisitos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#temario">Temario</a></li>
+                    <li class="nav-item"><a class="nav-link text-qgis-yellow" href="pages/proximos_cursos.html">Próximos Cursos</a></li>
                 </ul>
             </div>
         </div>
@@ -354,6 +355,31 @@
         </div>
     </div>
 
+    <!-- Sección de Agradecimiento -->
+    <section class="py-5 position-relative overflow-hidden border-top border-dark text-center" id="thankYouSection" style="background: linear-gradient(180deg, #121212 0%, #000000 100%); min-height: 45vh; display: flex; align-items: center; justify-content: center;">
+        <div class="bg-shape shape-2" style="top: 10%; left: 5%;"></div>
+        <div class="bg-shape shape-1" style="bottom: 10%; right: 5%;"></div>
+        <div class="grid-overlay"></div>
+        <div class="container position-relative z-index-1">
+            <h1 class="display-1 fw-black mb-3" style="font-size: clamp(3rem, 8vw, 6rem); text-transform: uppercase; background: linear-gradient(45deg, #FEE028, #93C038, #589632); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: pulseGlow 2.5s infinite alternate;">
+                ¡MUCHAS GRACIAS!
+            </h1>
+            <p class="lead text-muted-light font-mono mx-auto mt-4" style="max-width: 600px; font-size: 1.25rem;">
+                Por ser parte de esta edición. ¡El futuro geoespacial está en tus manos!
+            </p>
+            <button class="btn btn-outline-qgis btn-lg mt-4 font-mono fw-bold" onclick="launchFireworks()" style="border-width: 2px;">
+                <i class="bi bi-stars me-2"></i> CELEBRAR
+            </button>
+        </div>
+    </section>
+    
+    <style>
+        @keyframes pulseGlow {
+            0% { filter: drop-shadow(0 0 10px rgba(254, 224, 40, 0.2)); }
+            100% { filter: drop-shadow(0 0 30px rgba(147, 192, 56, 0.6)); }
+        }
+    </style>
+
     <!-- Footer -->
     <footer class="bg-black py-4 border-top border-dark text-center">
         <div class="container font-mono small text-muted">
@@ -365,6 +391,46 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Canvas Confetti for Fireworks -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+        function launchFireworks() {
+            var duration = 3 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1050 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        }
+        
+        let fireworksFired = false;
+        window.addEventListener('scroll', function() {
+            var section = document.getElementById('thankYouSection');
+            if(section && !fireworksFired) {
+                var rect = section.getBoundingClientRect();
+                // Check if section is well within view
+                if(rect.top < window.innerHeight - 100 && rect.bottom >= 0) {
+                    fireworksFired = true;
+                    setTimeout(launchFireworks, 300);
+                }
+            }
+        });
+    </script>
+
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/comments.js"></script>
