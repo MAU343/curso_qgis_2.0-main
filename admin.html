@@ -89,6 +89,11 @@
                         <i class="bi bi-chat-dots-fill me-2"></i>Comentarios
                     </button>
                 </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link text-light rounded-0 border border-secondary" style="margin-left:4px;" id="interesadosTab" data-bs-toggle="pill" data-bs-target="#interesadosPanel" type="button" role="tab">
+                        <i class="bi bi-bookmark-star-fill me-2"></i>Interesados
+                    </button>
+                </li>
             </ul>
 
             <!-- Tab Content -->
@@ -132,6 +137,23 @@
                     <div id="comentariosEmptyState" class="d-none text-center py-5">
                         <i class="bi bi-inbox fs-1 text-muted"></i>
                         <p class="text-muted font-mono mt-2">No hay comentarios para este dia.</p>
+                    </div>
+                </div>
+
+                <!-- Interesados Panel -->
+                <div class="tab-pane fade" id="interesadosPanel" role="tabpanel">
+                    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                        <p class="text-muted-light font-mono small mb-0" id="interesadosCountInfo">Cargando...</p>
+                        <button class="btn btn-outline-qgis btn-sm font-mono" onclick="cargarInteresados()">
+                            <i class="bi bi-arrow-clockwise me-1"></i> Actualizar
+                        </button>
+                    </div>
+                    <div id="interesadosContainer">
+                        <p class="text-muted font-mono small text-center">Selecciona la pestaña para cargar interesados.</p>
+                    </div>
+                    <div id="interesadosEmptyState" class="d-none text-center py-5">
+                        <i class="bi bi-inbox fs-1 text-muted"></i>
+                        <p class="text-muted font-mono mt-2">No hay interesados registrados todavia.</p>
                     </div>
                 </div>
 

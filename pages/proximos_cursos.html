@@ -148,12 +148,14 @@
                     <form id="interestForm">
                         <div class="mb-3">
                             <label class="form-label font-mono small text-qgis-yellow">Nombre Completo</label>
-                            <input type="text" class="form-control bg-transparent border-secondary text-light custom-input" required placeholder="Ingresa tu nombre">
+                            <input type="text" class="form-control bg-transparent border-secondary text-light custom-input" id="nombreInteres" required placeholder="Ingresa tu nombre">
                         </div>
                         <div class="mb-4">
                             <label class="form-label font-mono small text-qgis-yellow">Correo Electrónico</label>
-                            <input type="email" class="form-control bg-transparent border-secondary text-light custom-input" required placeholder="correo@ejemplo.com">
+                            <input type="email" class="form-control bg-transparent border-secondary text-light custom-input" id="emailInteres" required placeholder="correo@ejemplo.com">
+                            <input type="hidden" id="cursoInteres" value="">
                         </div>
+                        <div id="submitStatus" class="d-none"></div>
                         <button type="submit" class="btn btn-qgis-primary w-100 font-mono fw-bold rounded-0 btn-lg">
                             <i class="bi bi-send-fill me-2"></i> ENVIAR SOLICITUD
                         </button>
@@ -176,6 +178,9 @@
     
     <script>
         // Modal functionality
+        const API_REGISTER = 'https://sigetux.tuxtla.gob.mx/api/curso/registrar';
+        // const API_REGISTER = 'http://127.0.0.1:8000/api/curso/registrar';
+
         const registerModal = document.getElementById('registerModal')
         if (registerModal) {
             registerModal.addEventListener('show.bs.modal', event => {
@@ -183,20 +188,61 @@
                 const course = button.getAttribute('data-bs-course')
                 const modalBodyP = registerModal.querySelector('#modalCourseName')
                 modalBodyP.innerHTML = `Curso de interés: <br><strong class="text-white">${course}</strong>`
+                document.getElementById('cursoInteres').value = course
             })
         }
         
         // Form submission
         const interestForm = document.getElementById('interestForm');
         if (interestForm) {
-            interestForm.addEventListener('submit', function(e) {
+            interestForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                alert('¡Gracias por tu interés! Hemos registrado tus datos y te contactaremos en breve.');
-                const modalInstance = bootstrap.Modal.getInstance(registerModal);
-                if (modalInstance) {
-                    modalInstance.hide();
+
+                const nombre = document.getElementById('nombreInteres').value.trim();
+                const email = document.getElementById('emailInteres').value.trim();
+                const curso = document.getElementById('cursoInteres').value;
+                const submitBtn = interestForm.querySelector('button[type="submit"]');
+                const submitStatus = document.getElementById('submitStatus');
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i> ENVIANDO...';
+                submitStatus.classList.add('d-none');
+
+                try {
+                    const res = await fetch(API_REGISTER, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ nombre, email, curso })
+                    });
+
+                    if (!res.ok) throw new Error('Error al enviar');
+
+                    submitStatus.className = 'alert alert-success rounded-0 border-0 font-mono small mt-3 animate-fade-in';
+                    submitStatus.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> Registro exitoso. Te contactaremos pronto.';
+                    submitStatus.classList.remove('d-none');
+
+                    setTimeout(() => {
+                        const modalInstance = bootstrap.Modal.getInstance(registerModal);
+                        if (modalInstance) modalInstance.hide();
+                        submitStatus.classList.add('d-none');
+                        interestForm.reset();
+                    }, 2000);
+                } catch {
+                    submitStatus.className = 'alert alert-danger rounded-0 border-0 font-mono small mt-3 animate-fade-in';
+                    submitStatus.innerHTML = '<i class="bi bi-exclamation-triangle-fill me-2"></i> Error al enviar. Intenta de nuevo.';
+                    submitStatus.classList.remove('d-none');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="bi bi-send-fill me-2"></i> ENVIAR SOLICITUD';
                 }
-                this.reset();
+            });
+        }
+
+        // Reset status when modal closes
+        if (registerModal) {
+            registerModal.addEventListener('hidden.bs.modal', function () {
+                const submitStatus = document.getElementById('submitStatus');
+                if (submitStatus) submitStatus.classList.add('d-none');
             });
         }
     </script>

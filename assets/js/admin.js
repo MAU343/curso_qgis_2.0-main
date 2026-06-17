@@ -280,11 +280,98 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+// ---- INTERESADOS ADMIN ----
+
+async function cargarInteresados() {
+    const container = document.getElementById('interesadosContainer');
+    const countInfo = document.getElementById('interesadosCountInfo');
+    const emptyState = document.getElementById('interesadosEmptyState');
+
+    container.innerHTML = '<p class="text-muted font-mono small text-center">Cargando interesados...</p>';
+    emptyState.classList.add('d-none');
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/curso/registrations`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (res.status === 401) { cerrarSesion(); return; }
+        if (!res.ok) throw new Error('Error al cargar');
+
+        const data = await res.json();
+        const interesados = data.filter(r => r.curso);
+
+        if (interesados.length === 0) {
+            container.innerHTML = '';
+            emptyState.classList.remove('d-none');
+            countInfo.textContent = '0 interesados registrados';
+            return;
+        }
+
+        // Group by course
+        const grouped = {};
+        interesados.forEach(r => {
+            const courseKey = r.curso;
+            if (!grouped[courseKey]) {
+                grouped[courseKey] = { label: courseKey, records: [] };
+            }
+            grouped[courseKey].records.push(r);
+        });
+
+        const sortedCourses = Object.keys(grouped).sort();
+
+        countInfo.textContent = `${interesados.length} interesado(s) en ${sortedCourses.length} curso(s)`;
+
+        container.innerHTML = sortedCourses.map(courseKey => {
+            const group = grouped[courseKey];
+            const rows = group.records.map((r, i) => `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td class="text-qgis-light fw-bold">${escapeHtml(r.nombre)}</td>
+                    <td>${escapeHtml(r.email)}</td>
+                    <td class="text-qgis-yellow font-mono small">${escapeHtml(r.curso)}</td>
+                    <td class="text-muted" style="color: #ffffff !important;">${formatearFecha(r.created_at)}</td>
+                </tr>
+            `).join('');
+
+            return `
+                <div class="mb-5">
+                    <h4 class="fw-bold mb-3 text-qgis-light">
+                        <i class="bi bi-bookmark-star-fill me-2"></i>${escapeHtml(group.label)}
+                        <span class="badge bg-qgis-dark font-mono ms-2">${group.records.length}</span>
+                    </h4>
+                    <div class="table-responsive">
+                        <table class="table table-dark table-striped table-bordered border-secondary font-mono small mb-0">
+                            <thead class="text-qgis-yellow text-uppercase" style="background-color:#1e1e1e;">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Curso</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody>${rows}</tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+    } catch (err) {
+        container.innerHTML = `<p class="text-center text-danger font-mono small">Error al cargar: ${err.message}</p>`;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const select = document.getElementById('comentarioDiaSelect');
     select.addEventListener('change', () => cargarComentariosAdmin());
 
     document.getElementById('comentariosTab').addEventListener('shown.bs.tab', () => {
         cargarComentariosAdmin();
+    });
+
+    document.getElementById('interesadosTab').addEventListener('shown.bs.tab', () => {
+        cargarInteresados();
     });
 });
