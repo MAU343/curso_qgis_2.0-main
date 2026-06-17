@@ -27,11 +27,303 @@
         </div>
     </section>
 
-    <!-- Slide 2: Movimiento de Tierras -->
+    <!-- Slide PDF 1: Decodificando el Relieve -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-globe-americas slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Decodificando el Relieve: Modelos Digitales de Elevación (MDE)</h2>
+                <p class="slide-text mt-3">La base de la inteligencia geoespacial moderna</p>
+                <div class="p-4 bg-dark bg-darker border border-secondary rounded mt-4">
+                    <p class="font-mono text-muted-light mb-0">Qué son, cómo se generan y por qué transforman nuestro entendimiento del territorio físico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 2: Anatomia de un MDE -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-grid-3x3 slide-icon"></i>
+                <h2 class="slide-subtitle">La Anatomía de un MDE</h2>
+                <p class="slide-text mt-3">Representación visual y matemática de los valores de altura con respecto al nivel medio del mar.</p>
+                <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> <strong>El Raster:</strong> Los datos se estructuran en una malla regular. Cada celda contiene coordenadas espaciales (X, Y) y un valor de elevación (Z).</li>
+                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> <strong>Reglas de Calidad:</strong> La utilidad de un MDE se mide por dos variables: Exactitud y Resolución Horizontal.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 3: Dos lentes para ver el mundo -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-binoculars-fill slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Dos Lentes para Ver el Mundo</h2>
+                <p class="slide-text mt-3">Un mismo espacio geográfico contiene dos realidades altimétricas.</p>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="p-4 bg-dark bg-darker border border-qgis rounded h-100">
+                            <h4 class="text-qgis-light font-mono">Con Elementos</h4>
+                            <p class="text-muted-light font-mono small mb-0">Modelo Digital de Superficie (MDS).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-3 mt-md-0">
+                        <div class="p-4 bg-dark bg-darker border border-secondary rounded h-100">
+                            <h4 class="text-white font-mono">Sin Elementos</h4>
+                            <p class="text-muted-light font-mono small mb-0">Modelo Digital de Terreno (MDT).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 4: Matriz Diagnóstica -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-table slide-icon"></i>
+                <h2 class="slide-subtitle">Matriz Diagnóstica: Superficie vs. Terreno</h2>
+                <div class="row mt-4 font-mono text-muted-light small">
+                    <div class="col-md-6">
+                        <h4 class="text-qgis-light mb-3">MDS</h4>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check2-square text-qgis-yellow me-2"></i> <strong>Qué incluye:</strong> Vegetación, edificaciones, infraestructura y terreno.</li>
+                            <li class="mt-2"><i class="bi bi-check2-square text-qgis-yellow me-2"></i> <strong>Utilidad principal:</strong> Planeación urbana, análisis de intervisibilidad, obstáculos aéreos.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mt-4 mt-md-0">
+                        <h4 class="text-white mb-3">MDT</h4>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check2-square text-secondary me-2"></i> <strong>Qué incluye:</strong> Exclusivamente la forma del relieve natural. Elementos ajenos removidos algorítmicamente.</li>
+                            <li class="mt-2"><i class="bi bi-check2-square text-secondary me-2"></i> <strong>Utilidad principal:</strong> Hidrología, susceptibilidad a inundaciones, fallas geológicas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 5: Árbol Genealógico -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-diagram-3-fill slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">El Árbol Genealógico de la Obtención de Datos</h2>
+                <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
+                    <li>
+                        <i class="bi bi-1-circle-fill text-qgis-light me-3"></i> <strong>Métodos Directos (Terreno real):</strong>
+                        <ul class="list-unstyled ms-5 mt-2">
+                            <li>- Levantamientos topográficos (Estación Total / GPS)</li>
+                            <li>- Altímetros aerotransportados (Radares y Láser / LiDAR)</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4">
+                        <i class="bi bi-2-circle-fill text-qgis-light me-3"></i> <strong>Métodos Indirectos (Conversión):</strong>
+                        <ul class="list-unstyled ms-5 mt-2">
+                            <li>- Digitalización de curvas de nivel (Cartografía impresa a vector)</li>
+                            <li>- Restitución fotogramétrica (Imágenes estéreo)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 6: Fotogrametría -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-camera-fill slide-icon"></i>
+                <h2 class="slide-subtitle">Fotogrametría: Visión Estéreo Computarizada</h2>
+                <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
+                    <li><i class="bi bi-arrow-right-short text-qgis-light me-2"></i> <strong>El Proceso:</strong> La técnica de correlación cruzada compara pares estereoscópicos de fotografías aéreas.</li>
+                    <li class="mt-2"><i class="bi bi-arrow-right-short text-qgis-light me-2"></i> <strong>La Mecánica:</strong> Algoritmos analizan la información radiométrica (escalas de grises) para encontrar puntos homólogos y calcular la profundidad.</li>
+                </ul>
+                <div class="p-3 bg-dark border-left-qgis mt-4">
+                    <h5 class="fw-bold mb-2 text-white">Ficha Técnica (INEGI):</h5>
+                    <ul class="list-unstyled mb-0 font-mono small text-muted-light">
+                        <li>- Resolución: 15 metros</li>
+                        <li>- Exactitud: 3 metros</li>
+                        <li>- Escala de cobertura: 1:20,000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 7: LiDAR -->
+    <section class="slide text-center">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-lg-10">
+                <i class="bi bi-ev-front-fill slide-icon text-qgis-yellow d-block mb-3" style="font-size: 4rem;"></i>
+                <h2 class="display-4 fw-bold">La Revolución <span class="text-gradient-qgis">LiDAR</span></h2>
+                <p class="lead font-mono mt-3">Light Detection + Ranging = Coordenadas tridimensionales de altísima precisión.</p>
+                <div class="p-4 bg-dark bg-darker border border-secondary rounded mt-4">
+                    <p class="font-mono text-muted-light small mb-0"><strong>Insight:</strong> El estándar moderno. Frente a los métodos tradicionales, LiDAR ofrece exactitud sub-métrica, un nivel de detalle sin precedentes y tiempos de respuesta operativos drásticamente más rápidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 8: Física de Precisión -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-airplane-engines slide-icon"></i>
+                <h2 class="slide-subtitle">La Física de la Precisión Aerotransportada</h2>
+                <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
+                    <li><i class="bi bi-1-circle-fill text-qgis-light me-3"></i> <strong>Emisión:</strong> Un telémetro láser genera un haz que un espejo desvía perpendicularmente, barriendo el terreno.</li>
+                    <li class="mt-3"><i class="bi bi-2-circle-fill text-qgis-light me-3"></i> <strong>Retorno:</strong> Al impactar objetos, una fracción de la energía se refleja de vuelta al sensor activo.</li>
+                    <li class="mt-3"><i class="bi bi-3-circle-fill text-qgis-light me-3"></i> <strong>Posicionamiento:</strong> Sincronización milimétrica con satélites GPS y sistemas inerciales (IMU) para fijar las coordenadas exactas.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 9: Nube de Puntos -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-cloud-haze2 slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">La Nube de Puntos: Materia Prima Digital</h2>
+                <p class="slide-text mt-3">Millones de coordenadas (X, Y, Z) capturadas y suspendidas en un entorno virtual tridimensional.</p>
+                <div class="p-4 bg-dark bg-darker border border-left-qgis rounded mt-4 font-mono small text-muted-light">
+                    <h5 class="fw-bold mb-3 text-white">Atributos de Datos (Más allá de la altura):</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>- <strong>Intensidad:</strong> Fuerza de la energía reflejada.</li>
+                        <li>- <strong>Clasificación:</strong> Identificación algorítmica del objeto.</li>
+                        <li>- <strong>Número de retorno:</strong> Permite penetrar el dosel forestal (el primer rebote es la copa del árbol, el último es el suelo).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 10: Filtrando la Realidad -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-funnel-fill slide-icon"></i>
+                <h2 class="slide-subtitle">Filtrando la Realidad</h2>
+                <div class="row mt-4 font-mono text-muted-light small">
+                    <div class="col-md-4">
+                        <div class="p-3 bg-dark border border-secondary rounded h-100">
+                            <h5 class="text-qgis-light">Step 1: Depuración</h5>
+                            <p class="mb-0">Eliminación sistemática de anomalías altimétricas (ruido del sensor u obstáculos).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3 mt-md-0">
+                        <div class="p-3 bg-dark border border-secondary rounded h-100">
+                            <h5 class="text-qgis-light">Step 2: Calibración</h5>
+                            <p class="mb-0">Comparación de la nube contra puntos de control terrestre fijos para erradicar errores.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3 mt-md-0">
+                        <div class="p-3 bg-dark border border-secondary rounded h-100">
+                            <h5 class="text-qgis-light">Step 3: Interpolación</h5>
+                            <p class="mb-0">Clasificación final y conversión del vector (TIN) a una matriz regular raster para el MDE definitivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 11: Rescatando el Pasado -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-clock-history slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">Rescatando el Pasado: Conversión Analógica a Digital</h2>
+                <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
+                    <li><i class="bi bi-1-circle-fill text-qgis-light me-3"></i> <strong>Escaneo:</strong> Digitalización de mapas impresos originales.</li>
+                    <li class="mt-2"><i class="bi bi-2-circle-fill text-qgis-light me-3"></i> <strong>Vectorización:</strong> Seguimiento semiautomático de líneas topográficas.</li>
+                    <li class="mt-2"><i class="bi bi-3-circle-fill text-qgis-light me-3"></i> <strong>Asignación:</strong> Inserción de valores de altura exactos a cada curva.</li>
+                    <li class="mt-2"><i class="bi bi-4-circle-fill text-qgis-light me-3"></i> <strong>TIN:</strong> Creación algorítmica de una red irregular de triángulos.</li>
+                    <li class="mt-2"><i class="bi bi-5-circle-fill text-qgis-light me-3"></i> <strong>Rasterización:</strong> Interpolación matemática para generar la matriz MDE.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 12: Ecosistema -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-gear-wide-connected slide-icon"></i>
+                <h2 class="slide-subtitle">Un Ecosistema de Aplicaciones</h2>
+                <div class="row mt-4 font-mono text-muted-light small">
+                    <div class="col-md-6 mb-3">
+                        <h5 class="text-qgis-yellow"><i class="bi bi-building me-2"></i> Ingeniería Civil</h5>
+                        <p>Diseño de carreteras, construcción de presas y cálculo masivo de volúmenes.</p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5 class="text-qgis-yellow"><i class="bi bi-globe-americas me-2"></i> Ciencias de la Tierra</h5>
+                        <p>Modelamiento hidrológico, cuencas de drenaje, riesgos de inundación.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="text-qgis-yellow"><i class="bi bi-tree-fill me-2"></i> Planeación y Medio Ambiente</h5>
+                        <p>Simulaciones de contaminantes, flujo de viento, agricultura de precisión.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="text-qgis-yellow"><i class="bi bi-crosshair me-2"></i> Operaciones Militares</h5>
+                        <p>Análisis del campo de batalla, intervisibilidad, simulación de vuelo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 13: El Arte Cartográfico -->
+    <section class="slide">
+        <div class="row align-items-center">
+            <div class="col-lg-10">
+                <i class="bi bi-palette-fill slide-icon text-qgis-yellow"></i>
+                <h2 class="slide-subtitle">El Arte Cartográfico: Relieve Sombreado</h2>
+                <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
+                    <li><i class="bi bi-check2-square text-qgis-light me-3"></i> <strong>La Técnica:</strong> El MDE permite generar mapas de sombras automáticos estimando valores de reflectancia de la superficie.</li>
+                    <li class="mt-3"><i class="bi bi-check2-square text-qgis-light me-3"></i> <strong>El Cálculo:</strong> Se simula la posición solar (altitud y azimut) para proyectar sombras matemáticas.</li>
+                    <li class="mt-3"><i class="bi bi-check2-square text-qgis-light me-3"></i> <strong>El Valor:</strong> Crucial para visualizar patrones de drenaje ocultos, texturas de fallas geológicas y dar volumen a mapas.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 14: El Motor Invisible -->
+    <section class="slide text-center">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-lg-10">
+                <i class="bi bi-cpu-fill slide-icon text-white d-block mb-3" style="font-size: 4rem;"></i>
+                <h2 class="display-5 fw-bold">El Motor Invisible del Territorio</h2>
+                <div class="p-4 bg-dark bg-darker border border-qgis rounded mt-4">
+                    <p class="font-mono text-muted-light mb-0">Los Modelos Digitales de Elevación trascienden la simple cartografía tridimensional. Operan como el tejido conectivo entre la recolección de datos crudos y el desarrollo humano. Son la infraestructura digital silenciosa sobre la cual se planifica, protege y construye el mundo físico moderno.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide PDF 15: INEGI -->
+    <section class="slide text-center">
+        <div class="row align-items-center justify-content-center h-100">
+            <div class="col-lg-10">
+                <i class="bi bi-pin-map-fill slide-icon text-qgis-yellow d-block mb-3" style="font-size: 4rem;"></i>
+                <h2 class="display-5 fw-bold">INEGI</h2>
+                <h3 class="text-muted-light font-mono mt-3">Instituto Nacional de Estadística y Geografía</h3>
+                <p class="slide-text mt-4">Proveedor fundamental de inteligencia altimétrica.</p>
+                <p class="font-mono text-muted-light small mt-4">Garantizando la exactitud del futuro geográfico de México mediante tecnología de vanguardia y rigor científico.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejercicio original: Movimiento de Tierras -->
     <section class="slide">
         <div class="row align-items-center">
             <div class="col-lg-8">
-                <i class="bi bi-calculator slide-icon"></i>
+                <i class="bi bi-calculator slide-icon text-qgis-yellow"></i>
                 <h2 class="slide-subtitle">Cálculo de Movimiento de Tierras</h2>
                 <p class="slide-text">Uso de la <strong>Calculadora Ráster</strong> para la comparación geométrica de superficies.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
@@ -42,11 +334,11 @@
         </div>
     </section>
 
-    <!-- Slide 3: Diseñador de Impresión -->
+    <!-- Ejercicio original: Diseñador de Impresión -->
     <section class="slide">
         <div class="row align-items-center">
             <div class="col-lg-8">
-                <i class="bi bi-printer slide-icon text-qgis-yellow"></i>
+                <i class="bi bi-printer slide-icon"></i>
                 <h2 class="slide-subtitle">El Diseñador de Impresión (Layout)</h2>
                 <p class="slide-text">Montaje técnico de planos integrando la vista en planta y múltiples elementos cartográficos.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono">
@@ -57,18 +349,24 @@
         </div>
     </section>
 
-    <!-- Slide 4: Ejercicio Práctico -->
+    <!-- Ejercicio original: Práctico -->
     <section class="slide">
         <div class="row align-items-center">
             <div class="col-lg-10">
-                <i class="bi bi-file-earmark-pdf slide-icon"></i>
+                <i class="bi bi-file-earmark-pdf slide-icon text-qgis-yellow"></i>
                 <h2 class="slide-subtitle text-white">Plano Ejecutivo Final</h2>
                 <p class="slide-text mt-3">Generación y exportación de un PDF de alta resolución con estándares de ingeniería civil.</p>
                 <ul class="list-unstyled slide-list mt-4 font-mono text-muted-light">
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Grilla de coordenadas (Cuadrícula UTM).</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Escala gráfica y Numérica.</li>
-                    <li><i class="bi bi-arrow-right-circle-fill text-qgis-light me-3"></i> Flecha de Norte, Cuadro de Datos y Tabla de Volúmenes.</li>
+                    <li><i class="bi bi-1-circle-fill text-qgis-light me-3"></i> Grilla de coordenadas (Cuadrícula UTM).</li>
+                    <li><i class="bi bi-2-circle-fill text-qgis-light me-3"></i> Escala gráfica y Numérica.</li>
+                    <li><i class="bi bi-3-circle-fill text-qgis-light me-3"></i> Flecha de Norte, Cuadro de Datos y Tabla de Volúmenes.</li>
                 </ul>
+                <div class="mt-5 p-4 bg-dark bg-darker border border-secondary rounded text-center">
+                    <h5 class="text-white mb-3"><i class="bi bi-cloud-arrow-down-fill text-qgis-yellow me-2"></i> Insumos del Ejercicio</h5>
+                    <a href="https://drive.google.com" target="_blank" class="btn btn-qgis-primary font-mono fw-bold">
+                        DESCARGAR INSUMOS (1.2 GB)
+                    </a>
+                </div>
             </div>
         </div>
     </section>
