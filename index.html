@@ -43,6 +43,7 @@
                     <li class="nav-item"><a class="nav-link" href="#detalles">Detalles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#requisitos">Requisitos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#temario">Temario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactoModal">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link text-qgis-yellow" href="pages/proximos_cursos.html">Próximos
                             Cursos</a></li>
                 </ul>
@@ -372,6 +373,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal de Contacto -->
+    <div class="modal fade" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-secondary rounded-0">
+                <div class="modal-header border-dark">
+                    <h5 class="modal-title font-mono text-qgis-light" id="contactoModalLabel"><i class="bi bi-envelope-fill me-2"></i>Contacto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <p class="text-muted-light font-mono small mb-4">Ponte en contacto con nosotros para cualquier duda o consulta sobre el curso.</p>
+                    <div class="p-3 border border-secondary rounded bg-darker mb-3">
+                        <i class="bi bi-envelope text-qgis-yellow fs-1 mb-2 d-block"></i>
+                        <a href="mailto:carlosyahirfuentesmorales@gmail.com" class="text-light fw-bold font-mono text-decoration-none" style="word-break: break-all;">
+                            carlosyahirfuentesmorales@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal de Asistencia -->
     <div class="modal fade" id="asistenciaModal" tabindex="-1" aria-labelledby="asistenciaModalLabel"
