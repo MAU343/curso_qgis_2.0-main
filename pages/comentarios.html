@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios de Alumnos | QGIS para Ingeniería Civil</title>
+    
+    <!-- Google Fonts: Outfit & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-dark text-light">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav" style="background-color: rgba(18, 18, 18, 0.95);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="bi bi-arrow-left-circle-fill me-2 text-qgis-light"></i>
+                VOLVER AL <span class="text-qgis-yellow">CURSO</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="py-5 mt-5 border-bottom border-secondary position-relative">
+        <div class="container position-relative z-index-1 mt-4 text-center">
+            <h1 class="display-4 fw-black mb-3 text-uppercase">
+                Comentarios de los <span class="text-qgis-yellow">Alumnos</span>
+            </h1>
+            <p class="lead text-muted-light font-mono mx-auto" style="max-width: 700px;">
+                Descubre lo que opinan los participantes sobre cada una de las sesiones del curso de QGIS aplicado a Ingeniería Civil.
+            </p>
+        </div>
+        <!-- Decorative Background Elements -->
+        <div class="bg-shape shape-1" style="opacity: 0.5;"></div>
+        <div class="grid-overlay"></div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="py-5 bg-dark section-darker" style="min-height: 60vh;">
+        <div class="container">
+            <div class="row mb-4 align-items-center">
+                <div class="col-12">
+                    <h3 class="fw-bold font-mono text-qgis-light mb-3 mb-md-0 text-center">
+                        <i class="bi bi-chat-square-quote me-2"></i>Todos los Comentarios
+                    </h3>
+                </div>
+            </div>
+
+            <div id="loadingState" class="text-center py-5">
+                <div class="spinner-border text-qgis-yellow mb-3" role="status"></div>
+                <p class="font-mono text-muted-light">Cargando comentarios...</p>
+            </div>
+
+            <div id="emptyState" class="text-center py-5 d-none">
+                <i class="bi bi-chat-square-quote text-muted display-1 opacity-25 mb-3"></i>
+                <h4 class="fw-bold text-muted-light">Aún no hay comentarios para este día</h4>
+                <p class="font-mono text-muted small">Sé el primero en compartir tu experiencia.</p>
+            </div>
+
+            <div id="errorState" class="alert border-danger bg-dark text-danger font-mono d-none text-center">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i> No se pudieron cargar los comentarios. Asegúrate de tener conexión o intenta más tarde.
+            </div>
+
+            <div class="row g-4" id="commentsContainer">
+                <!-- Comments will be rendered here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-4 border-top border-dark text-center">
+        <div class="container font-mono small text-muted">
+            <p class="mb-1"><i class="bi bi-c-circle me-1"></i> 2026 QGIS Aplicado a Proyectos de Ingeniería Civil.</p>
+            <p class="mb-0">Diseñado con <i class="bi bi-gear-wide-connected text-qgis-light mx-1"></i> precisión técnica.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS for fetching comments -->
+    <script src="../assets/js/view_comments.js"></script>
+</body>
+</html>
