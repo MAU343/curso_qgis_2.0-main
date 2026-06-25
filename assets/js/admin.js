@@ -249,7 +249,7 @@ async function cargarComentariosAdmin() {
                     </tbody>
                 </table>
             </div>
-            <p class="text-muted font-mono small mt-2">${data.length} comentario(s) para Dia ${dia}</p>
+            <p class="text-muted font-mono small mt-2">${data.length} comentario(s) ${dia === '0' ? 'Generales' : 'para Día ' + dia}</p>
         `;
     } catch (err) {
         container.innerHTML = `<p class="text-center text-danger font-mono small">Error al cargar: ${err.message}</p>`;
